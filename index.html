@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Penny Wang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -12,7 +13,7 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Inter', sans-serif;
       background-color: #502ecf;
       color: white;
       min-height: 100vh;
@@ -30,7 +31,6 @@
 
     .logo {
       font-size: 1.8rem;
-      line-height: 1;
     }
 
     nav a {
@@ -50,28 +50,31 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
       text-align: center;
+      padding: 2rem;
     }
 
     .intro-text {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s ease-out forwards;
       max-width: 700px;
     }
 
-    .intro-line {
-      font-size: 2.2rem;
+    .intro-text h1 {
+      font-size: 2.6rem;
       font-weight: 600;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 0.8s ease-out forwards;
-      line-height: 1.4;
+      margin-bottom: 1rem;
     }
 
-    .intro-line:nth-child(1) { animation-delay: 0.4s; }
-    .intro-line:nth-child(2) { animation-delay: 1.2s; }
-    .intro-line:nth-child(3) { animation-delay: 2s; }
+    .intro-text p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+      font-weight: 400;
+      color: #e5e5e5;
+    }
 
-    @keyframes fadeInUp {
+    @keyframes fadeIn {
       to {
         opacity: 1;
         transform: translateY(0);
@@ -103,8 +106,12 @@
         display: none;
       }
 
-      .intro-line {
-        font-size: 1.4rem;
+      .intro-text h1 {
+        font-size: 1.8rem;
+      }
+
+      .intro-text p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -122,9 +129,11 @@
 
   <main>
     <div class="intro-text">
-      <div class="intro-line">Hi. I’m Penny Wang.</div>
-      <div class="intro-line">I turn ideas into clean code and beautiful design.</div>
-      <div class="intro-line">Developer by training. Designer by instinct. Storyteller through technology.</div>
+      <h1>Hi. I’m Penny Wang.</h1>
+      <p>
+        I turn ideas into clean code and beautiful design. <br />
+        Developer by training. Designer by instinct. Storyteller through technology.
+      </p>
     </div>
   </main>
 

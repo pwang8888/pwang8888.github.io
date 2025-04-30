@@ -21,11 +21,12 @@
     
     body {
       font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #61ECFB /* Modern indigo/blue */
+      background-color: #00b894; /* Mint green */
       color: white;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      justify-content: space-between; /* This helps distribute space better */
     }
     
     header {
@@ -88,7 +89,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 2rem;
+      padding: 4rem 2rem; /* Increased vertical padding */
     }
     
     .intro-text {
@@ -96,12 +97,13 @@
       opacity: 0;
       transform: translateY(20px);
       animation: fadeIn 1.2s ease-out forwards;
+      padding: 4rem 0; /* Add padding top/bottom */
     }
     
     .intro-text h1 {
       font-size: 4rem;
       font-weight: 900;
-      line-height: 1.2;
+      line-height: 1.4; /* Increased line height for better spacing */
     }
     
     @keyframes fadeIn {
@@ -112,12 +114,13 @@
     }
     
     footer {
-      padding: 1.5rem 2.5rem;
+      padding: 2rem 2.5rem; /* Increased top/bottom padding */
       font-size: 0.9rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       color: rgba(255, 255, 255, 0.9);
+      margin-top: 2rem; /* Added margin to create more space */
     }
     
     .social {
@@ -153,11 +156,19 @@
       .intro-text h1 {
         font-size: 3rem;
       }
+      
+      .intro-text {
+        padding: 3rem 0;
+      }
+      
+      main {
+        padding: 3rem 2rem;
+      }
     }
     
     @media (max-width: 600px) {
       header {
-        padding: 1.2rem 1.5rem;
+        padding: 1.5rem 1.5rem;
       }
       
       nav {
@@ -172,8 +183,17 @@
         font-size: 2.2rem;
       }
       
+      .intro-text {
+        padding: 2rem 0;
+      }
+      
+      main {
+        padding: 2rem 1.5rem;
+      }
+      
       footer {
-        padding: 1rem 1.5rem;
+        padding: 1.5rem 1.5rem;
+        margin-top: 1.5rem;
       }
     }
   </style>

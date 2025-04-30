@@ -15,7 +15,7 @@
       font-family: 'Segoe UI', sans-serif;
       background-color: #502ecf;
       color: white;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -29,7 +29,8 @@
     }
 
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      line-height: 1;
     }
 
     nav a {
@@ -45,16 +46,25 @@
     }
 
     main {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
       text-align: center;
-      padding: 0 2rem;
+    }
+
+    .intro-text {
+      max-width: 700px;
     }
 
     .intro-line {
       font-size: 2.2rem;
-      font-weight: 700;
+      font-weight: 600;
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInUp 0.8s ease-out forwards;
+      line-height: 1.4;
     }
 
     .intro-line:nth-child(1) { animation-delay: 0.4s; }
@@ -92,13 +102,17 @@
       nav {
         display: none;
       }
+
+      .intro-line {
+        font-size: 1.4rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <div class="logo">👩🏻</div>
+    <div class="logo">👩🏻‍💻</div>
     <nav>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>

@@ -14,7 +14,7 @@
 
 body {
   font-family: 'Calibre', sans-serif;
-  background-color:#f0f0f0;
+  background-color: #00b894; /* Mint green */
   color: white;
   display: flex;
   flex-direction: column;
@@ -56,20 +56,38 @@ main {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem 2rem;
 }
 
 .intro-text {
   max-width: 1000px;
-  animation: fadeIn 1s ease-out forwards;
+  animation: fadeIn 1.2s ease-out forwards;
   opacity: 0;
   transform: translateY(20px);
 }
 
 .intro-text h1 {
-  font-size: 6 rem;
+  font-size: 5.5rem;
   font-weight: 900;
-  line-height: 1.2;
+  line-height: 1.3;
+}
+
+@media (max-width: 1024px) {
+  .intro-text h1 {
+    font-size: 4.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-text h1 {
+    font-size: 2rem;
+  }
 }
 
 @keyframes fadeIn {
@@ -80,8 +98,8 @@ main {
 }
 
 footer {
-  padding: 2rem 2.5rem;
-  font-size: 0.9rem;
+  padding: 3rem 2.5rem;
+  font-size: 0.95rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -96,7 +114,7 @@ footer {
 
 .social a {
   color: rgba(255, 255, 255, 0.9);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-decoration: none;
 }
 

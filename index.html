@@ -4,42 +4,51 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Penny Wang</title>
-
   <!-- Favicon as Emoji -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍🎨</text></svg>" type="image/svg+xml" />
-
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
-
   <!-- Preload Calibre Font -->
   <link rel="preload" href="assets/fonts/Calibre-Bold.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 <body>
-  <header>
-    <a href="index.html" class="logo" title="Go to homepage">👩🏻‍🎨</a>
-    <nav>
-      <a href="portfolio.html">Portfolio</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
+  <header></header>
   <main>
-    <div class="intro-text">
-      <h1>Hi. I'm Penny Wang.<br>I turn ideas into clean code<br>and beautiful design.</h1>
-    </div>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Penny Wang</h1>
+        <h2>Design Engineer</h2>
+        <p>I create elegant digital experiences with code and design.</p>
+      </div>
+    </section>
+    <section class="featured-work">
+      <h3>Featured Work</h3>
+      <div class="work-grid">
+        <a href="portfolio.html#project1" class="work-item">
+          <div class="work-image" style="background-image: url('assets/images/project1.jpg')"></div>
+          <h4>UI Redesign</h4>
+          <p>Financial Dashboard</p>
+        </a>
+        <a href="portfolio.html#project2" class="work-item">
+          <div class="work-image" style="background-image: url('assets/images/project2.jpg')"></div>
+          <h4>Mobile App</h4>
+          <p>Fitness Tracker</p>
+        </a>
+        <a href="portfolio.html#project3" class="work-item">
+          <div class="work-image" style="background-image: url('assets/images/project3.jpg')"></div>
+          <h4>Web Development</h4>
+          <p>E-commerce Platform</p>
+        </a>
+      </div>
+      <a href="portfolio.html" class="view-all">View All Work →</a>
+    </section>
   </main>
+  <footer></footer>
 
-  <footer>
-    <div>© 2025 Penny Wang</div>
-    <div class="social">
-      <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    </div>
-  </footer>
+  <!-- Scripts -->
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js"></script>
 </body>
 </html>
-

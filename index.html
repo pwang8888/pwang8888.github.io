@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Penny Wang</title>
-  <!-- Inter Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- 🌸 Favicon -->
+  <link rel="icon" href="https://emojiapi.dev/api/v1/cherry-blossom/64.png" type="image/png" />
+  <!-- Poppins Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -16,7 +18,7 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
       background-color: #502ecf;
       color: white;
       min-height: 100vh;
@@ -32,7 +34,15 @@
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 2rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    .logo:hover {
+      opacity: 0.85;
+      transform: scale(0.95);
+      transition: all 0.2s ease;
     }
 
     nav a {
@@ -40,7 +50,7 @@
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     nav a:hover {
@@ -57,23 +67,17 @@
     }
 
     .intro-text {
-      max-width: 750px;
+      max-width: 850px;
       animation: fadeIn 1s ease-out forwards;
       opacity: 0;
       transform: translateY(20px);
     }
 
     .intro-text h1 {
-      font-size: 2.4rem;
+      font-size: 3.2rem;
       font-weight: 600;
-      margin-bottom: 1rem;
-    }
-
-    .intro-text p {
-      font-size: 1.25rem;
-      line-height: 1.6;
-      font-weight: 400;
-      color: #f0f0f0;
+      line-height: 1.4;
+      margin-bottom: 0;
     }
 
     @keyframes fadeIn {
@@ -85,7 +89,7 @@
 
     footer {
       padding: 1rem 2rem;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: #ddd;
       display: flex;
       justify-content: space-between;
@@ -101,7 +105,7 @@
       margin-left: 1rem;
       color: #ddd;
       text-decoration: none;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
 
     .social a:hover {
@@ -114,11 +118,7 @@
       }
 
       .intro-text h1 {
-        font-size: 1.8rem;
-      }
-
-      .intro-text p {
-        font-size: 1rem;
+        font-size: 2rem;
       }
     }
   </style>
@@ -126,7 +126,7 @@
 <body>
 
   <header>
-    <div class="logo">🌸</div>
+    <a href="index.html" class="logo" title="Go to homepage">🌸</a>
     <nav>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
@@ -141,7 +141,7 @@
   </main>
 
   <footer>
-    <div>© 2025 Penny Wang</div>
+    <div>© 2025 Penny Wang </div>
     <div class="social">
       <a href="https://twitter.com" target="_blank" title="Twitter">
         <i class="fab fa-twitter"></i>

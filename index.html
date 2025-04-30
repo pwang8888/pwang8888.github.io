@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Penny Wang</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Inter Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
       box-sizing: border-box;
@@ -19,7 +22,6 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
 
     header {
@@ -55,14 +57,14 @@
     }
 
     .intro-text {
+      max-width: 750px;
+      animation: fadeIn 1s ease-out forwards;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeIn 1s ease-out forwards;
-      max-width: 700px;
     }
 
     .intro-text h1 {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       font-weight: 600;
       margin-bottom: 1rem;
     }
@@ -71,7 +73,7 @@
       font-size: 1.25rem;
       line-height: 1.6;
       font-weight: 400;
-      color: #e5e5e5;
+      color: #f0f0f0;
     }
 
     @keyframes fadeIn {
@@ -90,11 +92,16 @@
       align-items: center;
     }
 
+    .social {
+      display: flex;
+      align-items: center;
+    }
+
     .social a {
       margin-left: 1rem;
       color: #ddd;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
 
     .social a:hover {
@@ -119,7 +126,7 @@
 <body>
 
   <header>
-    <div class="logo">👩🏻‍💻</div>
+    <div class="logo">🌸</div>
     <nav>
       <a href="portfolio.html">Portfolio</a>
       <a href="about.html">About</a>
@@ -130,17 +137,19 @@
   <main>
     <div class="intro-text">
       <h1>Hi. I’m Penny Wang.</h1>
-      <p>
-        I turn ideas into clean code and beautiful design. <br />
-      </p>
+      <p>I turn ideas into clean code and beautiful design.</p>
     </div>
   </main>
 
   <footer>
     <div>© 2025 Penny Wang</div>
     <div class="social">
-      <a href="https://twitter.com" target="_blank">🐦</a>
-      <a href="https://linkedin.com" target="_blank">🔗</a>
+      <a href="https://twitter.com" target="_blank" title="Twitter">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
     </div>
   </footer>
 

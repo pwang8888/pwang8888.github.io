@@ -7,58 +7,85 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      font-family: "Helvetica Neue", sans-serif;
-      background-color: #f0fafa;
-      color: #1c2b2d;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #502ecf;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
-    nav {
+    header {
       display: flex;
-      justify-content: flex-end;
-      padding: 1.5rem 2rem;
-      font-size: 0.95rem;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+    }
+
+    .logo {
+      font-size: 1.5rem;
     }
 
     nav a {
-      margin-left: 25px;
+      color: #fff;
+      margin-left: 1.5rem;
       text-decoration: none;
-      color: #2a9d8f;
       font-weight: 500;
+      font-size: 1rem;
     }
 
     nav a:hover {
       text-decoration: underline;
     }
 
-    .intro {
+    main {
       text-align: center;
-      margin-top: 30vh;
-      padding: 0 1rem;
+      padding: 0 2rem;
     }
 
-    .intro h1 {
-      font-size: 3rem;
-      margin-bottom: 0.3rem;
-      font-weight: 600;
-      color: #1c2b2d;
+    .intro-line {
+      font-size: 2.2rem;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease-out forwards;
     }
 
-    .intro p {
-      font-size: 1.15rem;
-      color: #5e6d6f;
-      margin-top: 0;
+    .intro-line:nth-child(1) { animation-delay: 0.4s; }
+    .intro-line:nth-child(2) { animation-delay: 1.2s; }
+    .intro-line:nth-child(3) { animation-delay: 2s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     footer {
-      text-align: center;
-      margin-top: 20vh;
-      padding: 1rem;
+      padding: 1rem 2rem;
       font-size: 0.8rem;
-      color: #99aaaa;
+      color: #ddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social a {
+      margin-left: 1rem;
+      color: #ddd;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    .social a:hover {
+      color: white;
     }
 
     @media (max-width: 600px) {
@@ -69,19 +96,31 @@
   </style>
 </head>
 <body>
-  <nav>
-    <a href="about.html">About</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="mailto:your@email.com">Contact</a>
-  </nav>
 
-  <div class="intro">
-    <h1>Penny Wang</h1>
-    <p>Hi.I'm Penny Wang. I am a Software Engineer • Designer • Creative Technologist</p>
-  </div>
+  <header>
+    <div class="logo">💁‍♀️</div>
+    <nav>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="about.html">About</a>
+      <a href="mailto:your@email.com">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro-text">
+      <div class="intro-line">Hi. I’m Penny Wang.</div>
+      <div class="intro-line">I turn ideas into clean code and beautiful design.</div>
+      <div class="intro-line">Developer by training. Designer by instinct. Storyteller through technology.</div>
+    </div>
+  </main>
 
   <footer>
-    © 2025 Penny Wang
+    <div>© 2025 Penny Wang</div>
+    <div class="social">
+      <a href="https://twitter.com" target="_blank">🐦</a>
+      <a href="https://linkedin.com" target="_blank">🔗</a>
+    </div>
   </footer>
+
 </body>
 </html>

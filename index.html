@@ -9,50 +9,76 @@
       box-sizing: border-box;
     }
     body {
-      font-family: Helvetica, sans-serif;
       margin: 0;
+      font-family: "Helvetica Neue", sans-serif;
       background-color: #fff;
       color: #222;
     }
-    header {
+
+    nav {
       display: flex;
       justify-content: flex-end;
       padding: 1.5rem 2rem;
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
-    header a {
-      margin-left: 1.5rem;
+
+    nav a {
+      margin-left: 25px;
       text-decoration: none;
       color: #444;
     }
-    header a:hover {
+
+    nav a:hover {
       color: #000;
     }
-    main {
-      max-width: 700px;
-      margin: 20vh auto 0;
+
+    .intro {
       text-align: center;
+      margin-top: 30vh;
       padding: 0 1rem;
     }
-    h1 {
+
+    .intro h1 {
       font-size: 3rem;
       margin-bottom: 0.3rem;
+      font-weight: 600;
     }
-    p {
-      font-size: 1.2rem;
+
+    .intro p {
+      font-size: 1.1rem;
       color: #555;
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20vh;
+      padding: 1rem;
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: none;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <a href="/about">About</a>
-    <a href="/portfolio">Portfolio</a>
+  <nav>
+    <a href="about.html">About</a>
+    <a href="portfolio.html">Portfolio</a>
     <a href="mailto:your@email.com">Contact</a>
-  </header>
-  <main>
+  </nav>
+
+  <div class="intro">
     <h1>Penny Wang</h1>
     <p>Front-End Developer • Designer • Creative Technologist</p>
-  </main>
+  </div>
+
+  <footer>
+    © 2025 Penny Wang
+  </footer>
 </body>
 </html>

@@ -21,7 +21,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 2rem;
+  padding: 0;
 }
 
 .logo {
@@ -59,7 +59,7 @@ main {
 }
 
 footer {
-  padding: 2rem;
+  padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;

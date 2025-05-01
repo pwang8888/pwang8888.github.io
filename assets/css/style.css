@@ -79,9 +79,9 @@ main {
 }
 
 .intro-text h1 {
-  font-size: 5rem;
+  font-size: 4.5rem;
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.00;
   margin: 0;
 }
 

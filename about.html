@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>About Me</title>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Penny Wang</title>
+  <!-- Favicon as Emoji -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍🎨</text></svg>" type="image/svg+xml" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Preload Calibre Font -->
+  <link rel="preload" href="assets/fonts/Calibre-Bold.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 <body>
-  <h1>About Me</h1>
-  <p>Hi! I'm Penny Wang. I build thoughtful and minimal web experiences.</p>
+  <header></header>
+  <main>
+    <section class="about-section">
+      <h1>About Me</h1>
+      <div class="about-content">
+        <div class="about-text">
+          <p>Hello! I'm Penny, a design engineer based in San Francisco, CA who enjoys creating things that live on the internet. I develop exceptional websites and web applications that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.</p>
+          
+          
+          <p>Here are a few technologies I've been working with recently:</p>
+          
+          <ul class="skills-list">
+            <li>JavaScript (ES6+)</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>TypeScript</li>
+            <li>HTML & CSS</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+        <div class="about-image">
+          <div class="image-wrapper">
+            <img src="assets/images/profile.jpg" alt="Penny Wang" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer></footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/header.js"></script>
+  <script src="assets/js/footer.js"></script>
 </body>
 </html>
 

@@ -67,18 +67,19 @@ footer {
   color: rgba(255, 255, 255, 0.9);
 }
 
-.social {
+footer .social {
   display: flex;
   gap: 1rem;
+  visibility: visible;
 }
 
-.social a {
+footer .social a {
   color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
   text-decoration: none;
 }
 
-.social a:hover {
+footer .social a:hover {
   color: white;
 }
 

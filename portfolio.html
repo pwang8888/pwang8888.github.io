@@ -1,117 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Work | Penny Wang</title>
-  <!-- Favicon as Emoji -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍🎨</text></svg>" type="image/svg+xml" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Preload Calibre Font -->
-  <link rel="preload" href="assets/fonts/Calibre-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Penny Wang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .accent {
+            color: #00ff99; /* Updated accent color */
+        }
+        
+        /* Header/Navigation */
+        header {
+            padding: 30px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .accent-dot {
+            color: #00ff99;
+            display: inline-block;
+        }
+        
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #00ff99;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover {
+            color: #00ff99;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 50vh;
+            background-image: url('https://via.placeholder.com/1920x1080/181818/282828');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        /* Main Content */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .intro {
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
+            font-size: 1.1rem;
+        }
+        
+        .intro p {
+            margin-bottom: 20px;
+        }
+        
+        /* Project List */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Reduced from 30px */
+        }
+        
+        .project {
+            margin-bottom: 8px; /* Reduced from 15px */
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .project h2::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #00ff99;
+            transition: width 0.3s ease;
+        }
+        
+        .project:hover h2 {
+            color: #00ff99;
+        }
+        
+        .project:hover h2::after {
+            width: 100%;
+        }
+        
+        .project p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+        
+        .separator {
+            width: 40px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 5px 0 15px; /* Reduced bottom margin from 25px to 15px */
+        }
+        
+        /* Footer */
+        footer {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            header, footer {
+                padding: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav li {
+                margin-left: 0;
+            }
+            
+            main {
+                padding: 30px 20px;
+            }
+            
+            .project h2 {
+                font-size: 1.8rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .project-list {
+                gap: 20px; /* Adjusted for mobile */
+            }
+            
+            footer {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header></header>
-  <main>
-    <section class="portfolio-section">
-      <h1>My Work</h1>
-      <div class="portfolio-grid">
-        <div id="project1" class="project-card">
-          <div class="project-content">
-            <p class="project-overline">Featured Project</p>
-            <h3 class="project-title">Financial Dashboard</h3>
-            <div class="project-description">
-              <p>A comprehensive financial analytics dashboard designed for financial advisors. Features include real-time data tracking, customizable widgets, and interactive charts for portfolio analysis.</p>
-            </div>
-            <ul class="project-tech-list">
-              <li>React</li>
-              <li>D3.js</li>
-              <li>Node.js</li>
-              <li>MongoDB</li>
-            </ul>
-            <div class="project-links">
-              <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-image">
-            <a href="#">
-              <div class="img-wrapper" style="background-image: url('assets/images/project1.jpg')"></div>
-            </a>
-          </div>
+    <header>
+        <div class="logo">
+            Penny<span class="accent-dot">.</span>
         </div>
-
-        <div id="project2" class="project-card reverse">
-          <div class="project-content">
-            <p class="project-overline">Mobile Application</p>
-            <h3 class="project-title">Fitness Tracker</h3>
-            <div class="project-description">
-              <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing.</p>
-            </div>
-            <ul class="project-tech-list">
-              <li>React Native</li>
-              <li>Firebase</li>
-              <li>Redux</li>
-              <li>GraphQL</li>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="project-links">
-              <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
+        </nav>
+    </header>
+    
+    <div class="hero">
+        <h1>Portfolio</h1>
+    </div>
+    
+    <main>
+        <section class="intro">
+            <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
+            
+            <p>I combine technical expertise with creative vision to design applications that deliver results for both users and organizations. Explore my work to see how I transform ideas into elegant solutions that solve real-world problems.</p>
+            
+            <p>More samples available upon request.</p>
+        </section>
+        
+        <div class="separator"></div>
+        
+        <section class="project-list">
+            <div class="project">
+                <h2>Financial Dashboard</h2>
+                <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
             </div>
-          </div>
-          <div class="project-image">
-            <a href="#">
-              <div class="img-wrapper" style="background-image: url('assets/images/project2.jpg')"></div>
-            </a>
-          </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>Fitness Tracker Mobile App</h2>
+                <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>E-commerce Platform</h2>
+                <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>Weather Dashboard</h2>
+                <p>A simple weather application that provides current conditions and forecasts based on user location or search queries. Built with JavaScript, HTML/CSS, and the OpenWeather API, featuring a clean interface and responsive design that works across all devices.</p>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>Task Management System</h2>
+                <p>A collaborative task management system designed for remote teams. Features include task assignment, progress tracking, deadline management, and team communication tools. Developed with Vue.js, Express, MongoDB, and Socket.IO for real-time updates and notifications.</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="copyright">
+            © Penny Wang. Coded with ❤️ in 2025.
         </div>
-
-        <div id="project3" class="project-card">
-          <div class="project-content">
-            <p class="project-overline">Web Development</p>
-            <h3 class="project-title">E-commerce Platform</h3>
-            <div class="project-description">
-              <p>A scalable e-commerce platform built for small to medium businesses. Features include product management, automated inventory tracking, secure checkout, and analytics dashboard.</p>
-            </div>
-            <ul class="project-tech-list">
-              <li>Next.js</li>
-              <li>Stripe API</li>
-              <li>PostgreSQL</li>
-              <li>Tailwind CSS</li>
-            </ul>
-            <div class="project-links">
-              <a href="#" aria-label="GitHub Link" target="_blank" rel="noopener noreferrer">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" aria-label="External Link" target="_blank" rel="noopener noreferrer">
-                <i class="fas fa-external-link-alt"></i>
-              </a>
-            </div>
-          </div>
-          <div class="project-image">
-            <a href="#">
-              <div class="img-wrapper" style="background-image: url('assets/images/project3.jpg')"></div>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer></footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/header.js"></script>
-  <script src="assets/js/footer.js"></script>
+    </footer>
 </body>
 </html>

@@ -1,34 +1,27 @@
 @font-face {
   font-family: 'Calibre';
-  src: url('../fonts/Calibre-Bold.woff2') format('woff2');
-  font-weight: bold;
+  src: url('assets/fonts/Calibre-Bold.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 body {
-  font-family: 'Calibre', 'Helvetica Neue', Arial, sans-serif;
-  background-color: #00b894; /* Mint green */
+  margin: 0;
+  padding: 0;
+  background-color: #00b894;
+  font-family: 'Calibre', sans-serif;
   color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  margin: 0;
-}
-
-header, footer {
-  padding: 1.5rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  min-height: 100vh;
 }
 
 header {
-  border-bottom: 1px solid rgba(255,255,255,0.2);
-}
-
-footer {
-  border-top: 1px solid rgba(255,255,255,0.2);
-  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
 }
 
 .logo {
@@ -37,15 +30,16 @@ footer {
   color: white;
 }
 
-nav a {
-  color: white;
-  margin-left: 1.5rem;
-  text-decoration: none;
-  font-size: 1rem;
+nav {
+  display: flex;
+  gap: 2rem;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
 }
 
 main {
@@ -53,22 +47,50 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
   text-align: center;
+  padding: 4rem 2rem;
 }
 
 .intro-text h1 {
-  font-size: 3rem;
-  line-height: 1.3;
-  font-weight: bold;
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+footer {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.social {
+  display: flex;
+  gap: 1rem;
 }
 
 .social a {
-  color: white;
-  margin-left: 1rem;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 1.2rem;
+  text-decoration: none;
 }
 
 .social a:hover {
-  opacity: 0.8;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .intro-text h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  nav {
+    gap: 1rem;
+  }
+  nav a {
+    font-size: 0.95rem;
+  }
 }

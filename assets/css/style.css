@@ -42,6 +42,20 @@ nav a {
   font-size: 1rem;
 }
 
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
 main {
   flex-grow: 1;
   display: flex;

@@ -33,6 +33,7 @@ header {
 nav {
   display: flex;
   gap: 2rem;
+  position: relative;
 }
 
 nav a {
@@ -40,6 +41,8 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 nav a::after {
@@ -53,18 +56,21 @@ nav a::after {
   transition: width 0.3s ease-in-out;
 }
 
+nav a:hover {
+  color: #e0e0e0;
+}
+
 nav a:hover::after {
   width: 100%;
 }
 
-
 main {
   flex-grow: 1;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   text-align: center;
-  padding: 2rem 2rem 4rem;
+  padding: 6rem 2rem 4rem;
 }
 
 .intro-text {
@@ -73,9 +79,9 @@ main {
 }
 
 .intro-text h1 {
-  font-size: 4.5rem;
+  font-size: 5rem;
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.05;
   margin: 0;
 }
 
@@ -105,12 +111,14 @@ footer .social a:hover {
 
 @media (max-width: 768px) {
   .intro-text h1 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     line-height: 1.2;
   }
+
   nav {
     gap: 1rem;
   }
+
   nav a {
     font-size: 0.95rem;
   }

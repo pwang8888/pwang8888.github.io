@@ -21,7 +21,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0;
+  padding: 1.5rem 2rem;
 }
 
 .logo {
@@ -51,6 +51,11 @@ main {
   padding: 4rem 2rem;
 }
 
+.intro-text {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
 .intro-text h1 {
   font-size: 3.5rem;
   font-weight: 700;
@@ -59,7 +64,7 @@ main {
 }
 
 footer {
-  padding: 0;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -70,7 +75,6 @@ footer {
 footer .social {
   display: flex;
   gap: 1rem;
-  visibility: visible;
 }
 
 footer .social a {

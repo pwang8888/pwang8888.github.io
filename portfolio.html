@@ -79,10 +79,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 20px 0 40px 0;
-            padding: 30px 20px;
-            background-color: #1a1a1a;
-            border-radius: 8px;
+            margin: 0;
+            padding: 40px 0;
+            background-color: #181818;
             overflow: hidden;
         }
 
@@ -90,9 +89,9 @@
             max-width: 100%;
             height: auto;
             display: block;
-            max-height: 220px; /* Increased height for better visibility */
+            max-height: 250px;
             object-fit: contain;
-            filter: drop-shadow(0 0 8px rgba(0, 255, 153, 0.3)); /* Optional: adds a subtle glow effect */
+            filter: drop-shadow(0 0 15px rgba(0, 255, 153, 0.4));
         }
 
         main {
@@ -121,17 +120,16 @@
 
         .project {
             margin-bottom: 8px;
-            padding: 20px; /* Add padding for better spacing */
+            padding: 10px 0; /* Remove horizontal padding */
             transition: all 0.3s ease;
             cursor: pointer;
-            border-radius: 8px; /* Rounded corners */
-            background-color: #1a1a1a; /* Slightly lighter background for projects */
+            background-color: transparent; /* Remove background */
         }
 
         .project:hover {
-            transform: translateY(-3px); /* Subtle lift effect on hover */
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
-            background-color: #1d1d1d; /* Slightly lighter on hover */
+            transform: none; /* Remove lift effect */
+            box-shadow: none; /* Remove shadow */
+            background-color: transparent; /* Remove hover background */
         }
 
         .project h2 {
@@ -170,20 +168,18 @@
         }
 
         .separator {
-            width: 100%;
-            height: 1px;
+            width: 40px;
+            height: 2px;
             background-color: rgba(255, 255, 255, 0.1);
-            margin: 20px 0;
+            margin: 5px 0 15px;
         }
 
         footer {
-            padding: 30px 50px;
+            padding: 20px 50px;
             text-align: center;
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
             font-weight: 200;
-            margin-top: 40px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         @media (max-width: 768px) {
@@ -230,11 +226,11 @@
         </nav>
     </header>
 
-    <main>
-        <div class="hero-banner">
-            <img src="assets/images/snail-portfolio-banner.png" alt="Cartoon snail holding a Portfolio sign">
-        </div>
+    <div class="hero-banner">
+        <img src="assets/images/snail-portfolio-banner.png" alt="Cartoon snail holding a Portfolio sign">
+    </div>
 
+    <main>
         <section class="intro">
             <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
 
@@ -251,20 +247,28 @@
                 <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
             </div>
 
+            <div class="separator"></div>
+
             <div class="project">
                 <h2>Fitness Tracker Mobile App</h2>
                 <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
             </div>
+
+            <div class="separator"></div>
 
             <div class="project">
                 <h2>E-commerce Platform</h2>
                 <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
             </div>
 
+            <div class="separator"></div>
+
             <div class="project">
                 <h2>Weather Dashboard</h2>
                 <p>A simple weather application that provides current conditions and forecasts based on user location or search queries. Built with JavaScript, HTML/CSS, and the OpenWeather API, featuring a clean interface and responsive design that works across all devices.</p>
             </div>
+
+            <div class="separator"></div>
 
             <div class="project">
                 <h2>Task Management System</h2>

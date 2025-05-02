@@ -9,9 +9,11 @@ function createHeader() {
   
   header.innerHTML = `
     <div class="header-container">
-      <div class="logo">
-        Penny<span class="accent-dot">.</span>
-      </div>
+      <a href="index.html" class="logo-link">
+        <div class="logo">
+          Penny<span class="accent-dot">.</span>
+        </div>
+      </a>
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>

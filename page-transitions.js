@@ -4,6 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
   function createTransitionOverlay() {
     const overlay = document.createElement('div');
     overlay.className = 'page-transition-overlay';
+    
+    // Add logo to transition
+    const logo = document.createElement('div');
+    logo.className = 'transition-logo';
+    logo.innerHTML = 'Penny<span class="accent-dot">.</span>';
+    overlay.appendChild(logo);
+    
     document.body.appendChild(overlay);
     return overlay;
   }

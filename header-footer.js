@@ -58,6 +58,22 @@ function updateActiveNavLink() {
   });
 }
 
+// Function to handle header scroll effects
+function handleHeaderScroll() {
+  const header = document.querySelector('header');
+  
+  // Add scroll event listener
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 50) {
+      // Scrolled down - compact header
+      header.classList.add('header-scrolled');
+    } else {
+      // At top - normal header
+      header.classList.remove('header-scrolled');
+    }
+  });
+}
+
 // Initialize header and footer when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   createHeader();
@@ -65,4 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Update active nav links after header is created
   updateActiveNavLink();
+  
+  // Initialize header scroll effects
+  handleHeaderScroll();
 });

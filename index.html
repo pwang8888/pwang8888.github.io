@@ -11,15 +11,22 @@
 
     <style>
         /* Base styles */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #121212;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #121212; /* Dark background */
             color: white;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
+
+        /* Header/Navigation */
         header {
             padding: 30px 50px;
             display: flex;
@@ -29,13 +36,28 @@
             margin: 0 auto;
             width: 100%;
         }
-        .logo { font-size: 1.8rem; font-weight: 500; }
-        .accent-dot { color: #00ff99; }
+
+        .logo {
+            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .accent-dot {
+            color: #00ff99;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 30px;
         }
+
         nav a {
             color: white;
             text-decoration: none;
@@ -44,6 +66,7 @@
             padding-bottom: 5px;
             transition: color 0.3s ease;
         }
+
         nav a::after {
             content: '';
             position: absolute;
@@ -54,8 +77,16 @@
             background-color: #00ff99;
             transition: width 0.3s ease;
         }
-        nav a:hover { color: #00ff99; }
-        nav a:hover::after { width: 100%; }
+
+        nav a:hover {
+            color: #00ff99;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main content */
         main {
             flex: 1;
             display: flex;
@@ -64,19 +95,32 @@
             padding: 0 50px;
             min-height: 70vh;
         }
+
         .content-wrapper {
             text-align: center;
             max-width: 1200px;
+            margin: 0 auto;
             padding: 7px 20px;
         }
+
         .role {
             font-family: 'Space Mono', monospace;
             color: #ccc;
             margin-bottom: 10px;
             font-size: 1.1rem;
         }
-        h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px; font-weight: 500; }
-        .name { color: #00ff99; }
+
+        h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .name {
+            color: #00ff99;
+        }
+
         .description {
             color: #ccc;
             font-size: 1.2rem;
@@ -87,10 +131,24 @@
             margin-left: auto;
             margin-right: auto;
             font-weight: 200;
+            display: block;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .social-links { display: flex; justify-content: center; gap: 20px; }
+
+        @media (min-width: 1200px) {
+            .description {
+                width: 80%;
+                max-width: 1100px;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
         .social-link {
             width: 50px;
             height: 50px;
@@ -101,11 +159,19 @@
             justify-content: center;
             transition: all 0.3s ease;
         }
+
         .social-link:hover {
             background-color: rgba(0, 255, 153, 0.2);
             transform: translateY(-3px);
         }
-        .social-link svg { width: 22px; height: 22px; fill: white; }
+
+        .social-link svg {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        /* Footer */
         footer {
             padding: 20px 50px;
             text-align: center;
@@ -113,44 +179,55 @@
             font-size: 0.9rem;
             font-weight: 200;
         }
+
+        /* Media Queries */
         @media (max-width: 768px) {
             header { padding: 20px; }
             h1 { font-size: 3rem; }
+            .role { font-size: 1rem; }
+            .description { font-size: 1.1rem; }
         }
+
         @media (max-width: 480px) {
             header { flex-direction: column; gap: 20px; }
             nav ul { gap: 15px; }
             h1 { font-size: 2.5rem; }
+            .description { font-size: 1rem; }
         }
     </style>
 </head>
 <body>
-<header>
-    <div class="logo">Penny<span class="accent-dot">.</span></div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main>
-    <div class="content-wrapper">
-        <div class="role">Software Engineer</div>
-        <h1>Hello<span class="accent-dot">.</span> I'm <span class="name">Penny Wang</span></h1>
-        <p class="description">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.</p>
-        <div class="social-links">
-            <a href="https://github.com/pwang8888" class="social-link" target="_blank">[GitHub SVG]</a>
-            <a href="https://www.linkedin.com/in/ningwangpenny/" class="social-link" target="_blank">[LinkedIn SVG]</a>
+    <header>
+        <div class="logo">
+            Penny<span class="accent-dot">.</span>
         </div>
-    </div>
-</main>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<footer>
-    © Penny Wang. Coded with 💚 in 2025.
-</footer>
+    <main>
+        <div class="content-wrapper">
+            <div class="role">Software Engineer</div>
+            <h1>Hello<span class="accent-dot">.</span> I'm <span class="name">Penny Wang</span></h1>
+            <p class="description">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/pwang8888" class="social-link" target="_blank">[GitHub SVG]</a>
+                <a href="https://www.linkedin.com/in/ningwangpenny/" class="social-link" target="_blank">[LinkedIn SVG]</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            © Penny Wang. Coded with 💚 in 2025.
+        </div>
+    </footer>
 </body>
 </html>

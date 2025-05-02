@@ -1,67 +1,42 @@
-// Page transition animations
+// Simple Page Transitions with Fade Effect
 document.addEventListener('DOMContentLoaded', function() {
-  // Create transition overlay
-  function createTransitionOverlay() {
-    const overlay = document.createElement('div');
-    overlay.className = 'page-transition-overlay';
-    
-    // Add logo to transition
-    const logo = document.createElement('div');
-    logo.className = 'transition-logo';
-    logo.innerHTML = 'Penny<span class="accent-dot">.</span>';
-    overlay.appendChild(logo);
-    
-    document.body.appendChild(overlay);
-    return overlay;
-  }
+  // Create a simple overlay for transitions
+  const overlay = document.createElement('div');
+  overlay.className = 'page-transition-overlay';
+  document.body.appendChild(overlay);
   
   // Animation for page exit
   function animatePageExit() {
     return new Promise((resolve) => {
-      const overlay = createTransitionOverlay();
+      // Prevent scrolling during transition
+      document.body.style.overflow = 'hidden';
       
-      // Animate the overlay to cover the screen
+      // Show overlay
+      overlay.classList.add('visible');
+      
+      // Wait for animation to complete
       setTimeout(() => {
-        overlay.classList.add('active');
-        
-        // Wait for animation to complete
-        setTimeout(() => {
-          resolve(overlay);
-        }, 500); // Should match CSS transition duration
-      }, 10);
+        resolve();
+      }, 500); // Match this to your CSS transition duration
     });
   }
   
   // Animation for page entry
-  function animatePageEntry(overlay) {
-    // Add content-visible class to show the page content
-    document.body.classList.add('content-visible');
+  function animatePageEntry() {
+    // Hide overlay
+    overlay.classList.remove('visible');
     
-    // Animate the overlay away
-    setTimeout(() => {
-      overlay.classList.remove('active');
-      
-      // Remove the overlay after transition
-      setTimeout(() => {
-        overlay.remove();
-      }, 500); // Should match CSS transition duration
-    }, 100);
+    // Re-enable scrolling
+    document.body.style.overflow = '';
   }
   
   // Apply entry animation when page loads
-  const initialOverlay = createTransitionOverlay();
-  initialOverlay.classList.add('active');
-  
-  // Wait for page to fully load before revealing content
   window.addEventListener('load', function() {
-    setTimeout(() => {
-      document.body.classList.add('content-visible');
-      initialOverlay.classList.remove('active');
-      
-      setTimeout(() => {
-        initialOverlay.remove();
-      }, 500);
-    }, 100);
+    // Add initial animation class
+    document.body.classList.add('content-visible');
+    
+    // Animate page entry
+    animatePageEntry();
   });
   
   // Intercept all navigation links
@@ -84,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         
         // Animate page exit
-        animatePageExit().then((overlay) => {
+        animatePageExit().then(() => {
           // Navigate to the new page
           window.location.href = href;
         });

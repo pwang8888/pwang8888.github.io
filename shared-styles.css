@@ -7,17 +7,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px; /* Match the narrowest content width */
-    margin: 0 auto;
-    width: 100%;
+    /* Don't change any max-width yet */
+    position: relative; /* Add this */
+    left: 0; /* Add this */
+    right: 0; /* Add this */
 }
 
-main {
-    flex: 1;
-    max-width: 1000px; /* Standardize all pages to this width */
-    margin: 0 auto;
-    padding: 40px 20px; /* Standardize padding */
-}
 
 /* Then in all your page-specific CSS */
 

@@ -29,14 +29,33 @@ header {
     display: inline-block;
 }
 
+/* Ensure all link states maintain proper colors */
+.logo-link:link, 
+.logo-link:visited, 
+.logo-link:hover, 
+.logo-link:active {
+    color: white;
+    text-decoration: none;
+}
+
 .logo {
     display: inline-block;
     font-size: 1.8rem;
     font-weight: 500;
+    color: white; /* Explicitly set color */
 }
 
 .accent-dot {
-    color: #00ff99;
+    color: #00ff99 !important; /* Force the green color with !important */
+}
+
+/* Ensure the dot is green in all link states */
+.logo-link:link .accent-dot,
+.logo-link:visited .accent-dot,
+.logo-link:hover .accent-dot,
+.logo-link:active .accent-dot,
+.transition-logo .accent-dot {
+    color: #00ff99 !important;
 }
 
 nav {

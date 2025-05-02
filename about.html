@@ -1,52 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About | Penny Wang</title>
-  <!-- Favicon as Emoji -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👩🏻‍🎨</text></svg>" type="image/svg+xml" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <!-- Preload Calibre Font -->
-  <link rel="preload" href="assets/fonts/Calibre-Bold.woff2" as="font" type="font/woff2" crossorigin />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Penny Wang</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Shared header and footer styles -->
+    <link rel="stylesheet" href="shared-styles.css">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #121212; /* Dark background */
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Main Content - Add your page-specific styles here */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* Add more page-specific styles as needed */
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            /* Add your page-specific media queries here */
+        }
+    </style>
 </head>
 <body>
-  <header></header>
-  <main>
-    <section class="about-section">
-      <h1>About Me</h1>
-      <div class="about-content">
-        <div class="about-text">
-          <p>Hello! I'm Penny, a design engineer based in San Francisco, CA who enjoys creating things that live on the internet. I develop exceptional websites and web applications that provide intuitive, pixel-perfect user interfaces with efficient and modern backends.</p>
-          
-          
-          <p>Here are a few technologies I've been working with recently:</p>
-          
-          <ul class="skills-list">
-            <li>JavaScript (ES6+)</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>TypeScript</li>
-            <li>HTML & CSS</li>
-            <li>Figma</li>
-          </ul>
+    <header>
+        <div class="logo">
+            Penny<span class="accent-dot">.</span>
         </div>
-        <div class="about-image">
-          <div class="image-wrapper">
-            <img src="assets/images/profile.jpg" alt="Penny Wang" />
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer></footer>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Scripts -->
-  <script src="assets/js/header.js"></script>
-  <script src="assets/js/footer.js"></script>
+    <main>
+        <!-- Your page content here -->
+        <h1>About Me</h1>
+        <!-- Add your about page content -->
+    </main>
+    
+    <footer>
+        <div class="copyright">
+            © Penny Wang. Coded with 💚 in 2025.
+        </div>
+    </footer>
 </body>
 </html>
-

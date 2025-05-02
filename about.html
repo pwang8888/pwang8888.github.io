@@ -25,7 +25,7 @@
             flex-direction: column;
         }
         
-        /* Main Content - Add your page-specific styles here */
+        /* Main Content - About page specific styles */
         main {
             flex: 1;
             max-width: 1000px;
@@ -33,11 +33,106 @@
             padding: 40px 20px;
         }
         
-        /* Add more page-specific styles as needed */
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #1db954; /* Spotify green for accent */
+        }
+        
+        .about-intro {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.4;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 3rem;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .interests {
+            margin-top: 3rem;
+        }
+        
+        .interests h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1db954;
+        }
+        
+        .skills {
+            margin-top: 3rem;
+        }
+        
+        .skills h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #1db954;
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .skill-item {
+            background-color: rgba(29, 185, 84, 0.1);
+            border: 1px solid rgba(29, 185, 84, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .emoji {
+            font-size: 1.2rem;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
         
         /* Media Queries */
         @media (max-width: 768px) {
-            /* Add your page-specific media queries here */
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .about-intro {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -55,11 +150,44 @@
             </ul>
         </nav>
     </header>
-
+    
     <main>
-        <!-- Your page content here -->
         <h1>About Me</h1>
-        <!-- Add your about page content -->
+        
+        <div class="about-intro">
+            Hi. I'm Penny.
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I'm a creative technologist and web developer with a passion for building intuitive digital experiences. With a background in design and technology, I blend aesthetic sensitivity with technical expertise to create websites and applications that are both beautiful and functional.
+                </p>
+                
+                <p>
+                    My journey in tech began with curiosity about how things work. That same curiosity continues to drive me to explore new technologies and approaches to solving problems creatively. I believe in writing clean, maintainable code that makes life better for users and developers alike.
+                </p>
+                
+                <p>
+                    When I'm not coding, you can find me exploring hiking trails, experimenting in the kitchen with new recipes, or diving into a good book. I'm particularly interested in how technology can be used to create more sustainable and equitable futures.
+                </p>
+            </div>
+            
+            <div class="about-image">
+                <img src="assets/images/penny-seaside.jpg" alt="Penny Wang at the seaside" title="That's me!">
+            </div>
+        </div>
+        
+        <div class="interests">
+            <h2>What I'm Into <span class="emoji">💚</span></h2>
+            <div class="about-text">
+                <p>
+                    Beyond coding, I'm passionate about sustainable living, minimalist design, and exploring the outdoors. I collect vinyl records, practice yoga, and have been known to spend entire weekends perfecting homemade pasta recipes. I find that these creative outlets help balance my technical work and keep me inspired.
+                </p>
+            </div>
+        </div>
+        
+
     </main>
     
     <footer>

@@ -2,6 +2,11 @@
 function createHeader() {
   const header = document.createElement('header');
   
+  // Check if we're on the index page
+  const isIndexPage = window.location.pathname.endsWith('index.html') || 
+                      window.location.pathname.endsWith('/') || 
+                      window.location.pathname === '';
+  
   header.innerHTML = `
     <div class="header-container">
       <div class="logo">
@@ -36,8 +41,28 @@ function createFooter() {
   document.body.appendChild(footer);
 }
 
+// Function to update active navigation links
+function updateActiveNavLink() {
+  // Get current page filename
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  
+  // Find all nav links
+  const navLinks = document.querySelectorAll('nav a');
+  
+  // Loop through links and add active class to current page
+  navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href');
+    if (linkHref === currentPage) {
+      link.classList.add('active');
+    }
+  });
+}
+
 // Initialize header and footer when DOM is fully loaded
 document.addEventListener('DOMContentLoaded', function() {
   createHeader();
   createFooter();
+  
+  // Update active nav links after header is created
+  updateActiveNavLink();
 });

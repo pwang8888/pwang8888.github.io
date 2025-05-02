@@ -76,19 +76,36 @@
             width: 100%;
         }
 
+        /* Added intro header section to improve spacing */
+        .intro-header {
+            padding: 60px 20px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .intro-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00ff99;
+            margin-bottom: 15px;
+        }
+
         main {
             flex: 1;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
 
         .intro {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             line-height: 1.6;
             font-weight: 300;
             font-size: 1.1rem;
-            max-width: 800px;
         }
 
         .intro p {
@@ -167,7 +184,10 @@
                 gap: 15px;
             }
             main {
-                padding: 40px 20px;
+                padding: 30px 20px;
+            }
+            .intro-header {
+                padding: 40px 20px 20px;
             }
         }
 
@@ -196,6 +216,11 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Added intro header section with title -->
+    <div class="intro-header">
+        <div class="intro-title">Software Engineer</div>
+    </div>
 
     <main>
         <section class="intro">

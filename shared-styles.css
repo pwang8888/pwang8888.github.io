@@ -1,14 +1,23 @@
 /* Universal Header and Footer Styles */
 
 /* Header/Navigation */
+/* In shared-styles.css */
 header {
     padding: 30px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1000px; 
+    max-width: 1000px; /* Match the narrowest content width */
     margin: 0 auto;
     width: 100%;
+}
+
+/* Then in all your page-specific CSS */
+main {
+    flex: 1;
+    max-width: 1000px; /* Standardize all pages to this width */
+    margin: 0 auto;
+    padding: 40px 20px; /* Standardize padding */
 }
 
 .logo {

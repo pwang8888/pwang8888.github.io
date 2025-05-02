@@ -131,13 +131,6 @@ h1 {
     margin: 5px 0 15px;
 }
 
-/* Header scroll state */
-header.header-scrolled {
-    padding: 15px 20px;
-    background-color: rgba(18, 18, 18, 0.98);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-}
-
 /* Media Queries for Header and Footer */
 @media (max-width: 768px) {
     header {

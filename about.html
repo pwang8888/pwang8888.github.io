@@ -38,6 +38,19 @@
             margin-bottom: 1.5rem;
             font-weight: 600;
             color: #1db954; /* Spotify green for accent */
+            position: relative;
+            display: inline-block;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #1db954;
+            border-radius: 2px;
         }
         
         .about-intro {
@@ -52,11 +65,12 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-bottom: 3rem;
+            align-items: center;
         }
         
         .about-text {
             font-size: 1.1rem;
-            line-height: 1.6;
+            line-height: 1.8;
         }
         
         .about-text p {
@@ -67,46 +81,44 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
         
         .about-image img {
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 2px solid #1db954;
+            border-radius: 12px;
+            top: 20px;
+            right: -15px;
+            z-index: 0;
         }
         
         .interests {
-            margin-top: 3rem;
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border-left: 4px solid #1db954;
         }
         
         .interests h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
             color: #1db954;
-        }
-        
-        .skills {
-            margin-top: 3rem;
-        }
-        
-        .skills h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #1db954;
-        }
-        
-        .skill-list {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .skill-item {
-            background-color: rgba(29, 185, 84, 0.1);
-            border: 1px solid rgba(29, 185, 84, 0.3);
-            padding: 8px 16px;
-            border-radius: 50px;
-            font-size: 0.9rem;
+            align-items: center;
+            gap: 12px;
         }
         
         .emoji {
@@ -124,6 +136,13 @@
             .about-image {
                 order: -1;
                 margin-bottom: 2rem;
+            }
+            
+            .about-image::before {
+                width: 85%;
+                height: 85%;
+                top: 15px;
+                right: -10px;
             }
             
             h1 {
@@ -167,7 +186,6 @@
                 <p>
                     My journey in tech began with curiosity about how things work. That same curiosity continues to drive me to explore new technologies and approaches to solving problems creatively. I believe in writing clean, maintainable code that makes life better for users and developers alike.
                 </p>
-                
             </div>
             
             <div class="about-image">
@@ -183,8 +201,6 @@
                 </p>
             </div>
         </div>
-        
-
     </main>
     
     <footer>

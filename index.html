@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penny Wang</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Green heart favicon -->
+    <title>About | Penny Wang</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <!-- Shared header and footer styles -->
     <link rel="stylesheet" href="shared-styles.css">
     <style>
@@ -26,113 +25,132 @@
             flex-direction: column;
         }
         
-        /* Main content */
+        /* Main Content - About page specific styles */
         main {
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 50px;
-            min-height: 70vh;
-        }
-        
-        .content-wrapper {
-            text-align: center;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 9px 20px;
-        }
-        
-        .role {
-            font-family: 'Space Mono', monospace;
-            color: #ccc;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
+            padding: 40px 20px;
         }
         
         h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            font-weight: 500;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: #00ff99; /* Same green as index page */
+            position: relative;
+            display: inline-block;
         }
         
-        .name {
-            color: #00ff99;
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #00ff99;
+            border-radius: 2px;
         }
         
-        .description {
-            color: #ccc;
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            width: 90%;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 200;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        .about-intro {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            line-height: 1.4;
         }
         
-        @media (min-width: 1200px) {
-            .description {
-                width: 80%;
-                max-width: 1100px;
-            }
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 3rem;
+            align-items: flex-start;
         }
         
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
         
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.1);
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-image {
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
+            position: relative;
         }
         
-        .social-link:hover {
-            background-color: rgba(0, 255, 153, 0.2);
-            transform: translateY(-3px);
+        .about-image img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
         }
         
-        .social-link svg {
-            width: 22px;
-            height: 22px;
-            fill: white;
+        .about-image::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border: 2px solid #00ff99;
+            border-radius: 12px;
+            top: 20px;
+            right: -15px;
+            z-index: 0;
+        }
+        
+        .interests {
+            margin-top: 4rem;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border-left: 4px solid #00ff99;
+        }
+        
+        .interests h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #00ff99;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .emoji {
+            font-size: 1.2rem;
+            margin-right: 5px;
+            vertical-align: middle;
         }
         
         /* Media Queries */
         @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+                margin-bottom: 2rem;
+            }
+            
+            .about-image::before {
+                width: 85%;
+                height: 85%;
+                top: 15px;
+                right: -10px;
+            }
+            
             h1 {
-                font-size: 3rem;
+                font-size: 2rem;
             }
             
-            .role {
-                font-size: 1rem;
-            }
-            
-            .description {
-                font-size: 1.1rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .description {
-                font-size: 1rem;
+            .about-intro {
+                font-size: 1.2rem;
             }
         }
     </style>
@@ -151,28 +169,46 @@
             </ul>
         </nav>
     </header>
-
+    
     <main>
-        <div class="content-wrapper">
-            <div class="role">Software Engineer</div>
-            <h1>Hello<span class="accent-dot">.</span> I'm <span class="name">Penny Wang</span></h1>
-            <p class="description">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.</p>
+        <h1>About Me</h1>
+        
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem;">
+            <div class="about-intro" style="flex: 1;">
+                Hi. I'm Penny.
+            </div>
             
-            <div class="social-links">
-                <a href="https://github.com/pwang8888" class="social-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/ningwangpenny/" class="social-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
+            <div class="about-image" style="flex: 1; max-width: 48%;">
+                <img src="assets/images/penny-seaside.jpg" alt="Penny Wang at the seaside" title="That's me!">
+            </div>
+        </div>
+        
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I'm a creative technologist and web developer with a passion for building intuitive digital experiences. With a background in design and technology, I blend aesthetic sensitivity with technical expertise to create websites and applications that are both beautiful and functional.
+                </p>
+                
+                <p>
+                    My journey in tech began with curiosity about how things work. That same curiosity continues to drive me to explore new technologies and approaches to solving problems creatively. I believe in writing clean, maintainable code that makes life better for users and developers alike.
+                </p>
+            </div>
+            
+            <div style="display: none;">
+                <!-- Placeholder to maintain grid layout -->
+            </div>
+        </div>
+        
+        <div class="interests">
+            <h2>What I'm Into <span class="emoji">💚</span></h2>
+            <div class="about-text">
+                <p>
+                   When I'm not coding, you can find me exploring hiking trails, experimenting in the kitchen with new recipes, or diving into a good book. I'm particularly interested in how technology can be used to create more sustainable and equitable futures.
+                </p>
             </div>
         </div>
     </main>
-
+    
     <footer>
         <div class="copyright">
             © Penny Wang. Coded with 💚 in 2025.

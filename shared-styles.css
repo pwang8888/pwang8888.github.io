@@ -1,24 +1,19 @@
 /* Universal Header and Footer Styles */
 
 /* Header/Navigation */
-/* In shared-styles.css */
-/* Add to shared-styles.css */
+header {
+    padding: 30px 20px;
+    width: 100%;
+}
+
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 1000px; /* Match this to your portfolio page content width */
+    max-width: 1000px; /* Match this to your main content width */
     margin: 0 auto;
 }
-
-header {
-    padding: 30px 50px;
-    width: 100%;
-}
-
-
-/* Then in all your page-specific CSS */
 
 .logo {
     display: inline-block;
@@ -71,11 +66,50 @@ nav a:hover::after {
 
 /* Footer */
 footer {
-    padding: 20px 50px;
+    padding: 20px;
     text-align: center;
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
     font-weight: 200;
+}
+
+/* Common page elements */
+main {
+    flex: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Base styles for all pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Common headings and text styles */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Accent colors and common elements */
+.separator {
+    width: 40px;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 5px 0 15px;
 }
 
 /* Media Queries for Header and Footer */
@@ -83,10 +117,18 @@ footer {
     header {
         padding: 20px;
     }
+    
+    nav ul {
+        gap: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
-    header {
+    .header-container {
         flex-direction: column;
         gap: 20px;
     }

@@ -12,6 +12,13 @@ header {
     width: 100%;
 }
 
+main {
+    flex: 1;
+    max-width: 1000px; /* Standardize all pages to this width */
+    margin: 0 auto;
+    padding: 40px 20px; /* Standardize padding */
+}
+
 /* Then in all your page-specific CSS */
 
 .logo {

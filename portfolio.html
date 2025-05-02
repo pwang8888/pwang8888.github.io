@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Penny Wang</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Green heart favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
@@ -76,24 +78,6 @@
             width: 100%;
         }
 
-        /* Added intro header section to improve spacing */
-        .intro-header {
-            padding: 60px 20px 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-            width: 100%;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        .intro-title {
-            font-size: 1.1rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #00ff99;
-            margin-bottom: 15px;
-        }
-
         main {
             flex: 1;
             max-width: 1000px;
@@ -135,23 +119,8 @@
             position: relative;
         }
 
-        .project h2::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #00ff99;
-            transition: width 0.3s ease;
-        }
-
         .project:hover h2 {
             color: #00ff99;
-        }
-
-        .project:hover h2::after {
-            width: 100%;
         }
 
         .project p {
@@ -185,9 +154,6 @@
             }
             main {
                 padding: 30px 20px;
-            }
-            .intro-header {
-                padding: 40px 20px 20px;
             }
         }
 
@@ -238,34 +204,21 @@
 
             <div class="project">
                 <h2>Fitness Tracker Mobile App</h2>
-                <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
+                <p>A mobile fitness application developed with React Native, Firebase, Redux, and GraphQL, providing personalized workout plans, progress visualization, and social sharing capabilities.</p>
             </div>
 
             <div class="separator"></div>
 
             <div class="project">
                 <h2>E-commerce Platform</h2>
-                <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
+                <p>A scalable e-commerce platform built with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, featuring product management, inventory tracking, secure checkout, and analytics.</p>
             </div>
 
-            <div class="separator"></div>
-
-            <div class="project">
-                <h2>Weather Dashboard</h2>
-                <p>A simple weather application that provides current conditions and forecasts based on user location or search queries. Built with JavaScript, HTML/CSS, and the OpenWeather API, featuring a clean interface and responsive design that works across all devices.</p>
-            </div>
-
-            <div class="separator"></div>
-
-            <div class="project">
-                <h2>Task Management System</h2>
-                <p>A collaborative task management system designed for remote teams. Features include task assignment, progress tracking, deadline management, and team communication tools. Developed with Vue.js, Express, MongoDB, and Socket.IO for real-time updates and notifications.</p>
-            </div>
         </section>
     </main>
 
     <footer>
-        © Penny Wang. Coded with ❤️ in 2025.
+        © Penny Wang. Coded with 💚 in 2025.
     </footer>
 </body>
 </html>

@@ -2,15 +2,19 @@
 
 /* Header/Navigation */
 /* In shared-styles.css */
-header {
-    padding: 30px 50px;
+/* Add to shared-styles.css */
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Don't change any max-width yet */
-    position: relative; /* Add this */
-    left: 0; /* Add this */
-    right: 0; /* Add this */
+    width: 100%;
+    max-width: 1000px; /* Match this to your portfolio page content width */
+    margin: 0 auto;
+}
+
+header {
+    padding: 30px 50px;
+    width: 100%;
 }
 
 

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Penny Wang</title>
+    <title>Portfolio | Penny Wang</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Base styles */
@@ -82,89 +83,99 @@
             width: 100%;
         }
         
-        /* Main content */
+        /* Hero Section */
+        .hero {
+            width: 100%;
+            height: 50vh;
+            background-image: url('https://via.placeholder.com/1920x1080/181818/282828');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+        
+        /* Main Content */
         main {
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 50px;
-            min-height: 70vh;
-        }
-        
-        .content-wrapper {
-            text-align: center;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
-            padding: 7px 20px;
+            padding: 40px 20px;
         }
         
-        .role {
-            font-family: 'Space Mono', monospace;
-            color: #ccc;
-            margin-bottom: 10px;
+        .intro {
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 300;
             font-size: 1.1rem;
         }
         
-        h1 {
-            font-size: 4.5rem;
-            line-height: 1.1;
+        .intro p {
             margin-bottom: 20px;
-            font-weight: 500;
         }
         
-        .name {
+        /* Project List */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .project {
+            margin-bottom: 8px;
+            padding: 10px 0;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .project h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: white;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .project h2::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #00ff99;
+            transition: width 0.3s ease;
+        }
+        
+        .project:hover h2 {
             color: #00ff99;
         }
         
-        .description {
-            color: #ccc;
-            font-size: 1.2rem;
+        .project:hover h2::after {
+            width: 100%;
+        }
+        
+        .project p {
+            margin-bottom: 15px;
             line-height: 1.6;
-            margin-bottom: 30px;
-            width: 90%;
-            max-width: 1100px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 200;
-            display: block;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            font-weight: 300;
         }
         
-        @media (min-width: 1200px) {
-            .description {
-                width: 80%;
-                max-width: 1100px;
-            }
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .social-link {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        .separator {
+            width: 40px;
+            height: 2px;
             background-color: rgba(255, 255, 255, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        
-        .social-link:hover {
-            background-color: rgba(0, 255, 153, 0.2);
-            transform: translateY(-3px);
-        }
-        
-        .social-link svg {
-            width: 22px;
-            height: 22px;
-            fill: white;
+            margin: 5px 0 15px;
         }
         
         /* Footer */
@@ -183,15 +194,11 @@
             }
             
             h1 {
-                font-size: 3rem;
+                font-size: 2.5rem;
             }
             
-            .role {
-                font-size: 1rem;
-            }
-            
-            .description {
-                font-size: 1.1rem;
+            .project h2 {
+                font-size: 1.8rem;
             }
         }
         
@@ -205,12 +212,12 @@
                 gap: 15px;
             }
             
-            h1 {
-                font-size: 2.5rem;
+            .hero h1 {
+                font-size: 2rem;
             }
             
-            .description {
-                font-size: 1rem;
+            .project-list {
+                gap: 20px;
             }
         }
     </style>
@@ -229,31 +236,61 @@
             </ul>
         </nav>
     </header>
-
+    
+    <div class="hero">
+        <h1>Portfolio</h1>
+    </div>
+    
     <main>
-        <div class="content-wrapper">
-            <div class="role">Software Engineer</div>
-            <h1>Hello<span class="accent-dot">.</span> I'm <span class="name">Penny Wang</span></h1>
-            <p class="description">I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.</p>
+        <section class="intro">
+            <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
             
-            <div class="social-links">
-                <a href="https://github.com/pwang8888" class="social-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/ningwangpenny/" class="social-link" target="_blank">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                    </svg>
-                </a>
+            <p>I combine technical expertise with creative vision to design applications that deliver results for both users and organizations. Explore my work to see how I transform ideas into elegant solutions that solve real-world problems.</p>
+            
+            <p>More samples available upon request.</p>
+        </section>
+        
+        <div class="separator"></div>
+        
+        <section class="project-list">
+            <div class="project">
+                <h2>Financial Dashboard</h2>
+                <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
             </div>
-        </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>Fitness Tracker Mobile App</h2>
+                <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>E-commerce Platform</h2>
+                <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>Weather Dashboard</h2>
+                <p>A simple weather application that provides current conditions and forecasts based on user location or search queries. Built with JavaScript, HTML/CSS, and the OpenWeather API, featuring a clean interface and responsive design that works across all devices.</p>
+            </div>
+            
+            <div class="separator"></div>
+            
+            <div class="project">
+                <h2>Task Management System</h2>
+                <p>A collaborative task management system designed for remote teams. Features include task assignment, progress tracking, deadline management, and team communication tools. Developed with Vue.js, Express, MongoDB, and Socket.IO for real-time updates and notifications.</p>
+            </div>
+        </section>
     </main>
-
+    
     <footer>
         <div class="copyright">
-            © Penny Wang. Coded with ❤️ in 2025.
+            © Penny Wang. Coded with 💚 in 2025.
         </div>
     </footer>
 </body>

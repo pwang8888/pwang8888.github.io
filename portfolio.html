@@ -30,6 +30,7 @@
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         .logo {
@@ -74,45 +75,20 @@
         nav a:hover::after {
             width: 100%;
         }
-        
-        /* New hero section replacing the image */
-        .hero-section {
-            padding: 80px 20px 60px;
-            text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .hero-title {
-            font-size: 2.5rem;
-            font-weight: 300;
-            letter-spacing: 2px;
-            margin-bottom: 20px;
-        }
-        
-        .hero-subtitle {
-            color: #00ff99;
-            font-size: 1.1rem;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 10px;
-        }
 
         main {
             flex: 1;
             max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 60px 20px;
         }
 
         .intro {
-            margin-bottom: 40px;
+            margin-bottom: 60px;
             line-height: 1.6;
             font-weight: 300;
             font-size: 1.1rem;
             max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .intro p {
@@ -126,7 +102,7 @@
         }
 
         .project {
-            margin-bottom: 8px;
+            margin-bottom: 40px;
             padding: 10px 0;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -180,6 +156,7 @@
             color: rgba(255, 255, 255, 0.6);
             font-size: 0.9rem;
             font-weight: 200;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         @media (max-width: 768px) {
@@ -190,7 +167,7 @@
                 gap: 15px;
             }
             main {
-                padding: 30px 20px;
+                padding: 40px 20px;
             }
         }
 
@@ -198,9 +175,6 @@
             header {
                 flex-direction: column;
                 gap: 20px;
-            }
-            .hero-title {
-                font-size: 2rem;
             }
             footer {
                 text-align: center;
@@ -222,12 +196,6 @@
             </ul>
         </nav>
     </header>
-
-    <!-- New hero section replacing the image -->
-    <div class="hero-section">
-        <div class="hero-subtitle">Software Engineer</div>
-        <h1 class="hero-title">Creating Digital Experiences</h1>
-    </div>
 
     <main>
         <section class="intro">

@@ -76,19 +76,21 @@
 
         .hero-banner {
             width: 100%;
-            overflow: hidden;
-            background-color: #121212;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
-        }
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 0 20px;
+}
 
-        .hero-banner img {
-            width: 100%;
-            height: auto;
-            max-width: 1200px;
-            display: block;
-        }
+.hero-banner img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    max-height: 320px; /* limits how tall it can grow */
+    object-fit: contain;
+}
+
 
         main {
             flex: 1;

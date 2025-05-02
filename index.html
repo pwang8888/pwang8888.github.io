@@ -15,12 +15,13 @@
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            min-height: calc(100vh - 200px); /* Account for header and footer */
+            min-height: calc(90vh - 180px); /* Reduced height to move content up */
+            margin-top: -30px; /* Negative margin to move content up */
         }
         
         .role {
@@ -176,7 +177,7 @@
         <div class="content-wrapper">
             <div class="role">Software Engineer</div>
             <h1>Hello<span class="accent-dot">.</span> I'm <span class="name">Penny Wang</span></h1>
-            <div class="description" data-text="I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.">
+            <div class="description">
                 I excel at crafting elegant digital experiences and I am proficient in various programming languages and technologies.
             </div>
             
@@ -205,3 +206,4 @@
     <script src="page-transitions.js"></script>
 </body>
 </html>
+

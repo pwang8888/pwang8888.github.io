@@ -19,6 +19,7 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            line-height: 1.5;
         }
 
         header {
@@ -73,25 +74,28 @@
         nav a:hover::after {
             width: 100%;
         }
-
-        .hero-banner {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0;
-            padding: 40px 0;
-            background-color: #181818;
-            overflow: hidden;
+        
+        /* New hero section replacing the image */
+        .hero-section {
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .hero-banner img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            max-height: 250px;
-            object-fit: contain;
-            filter: drop-shadow(0 0 15px rgba(0, 255, 153, 0.4));
+        
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            color: #00ff99;
+            font-size: 1.1rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
         }
 
         main {
@@ -106,6 +110,9 @@
             line-height: 1.6;
             font-weight: 300;
             font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .intro p {
@@ -120,23 +127,16 @@
 
         .project {
             margin-bottom: 8px;
-            padding: 10px 0; /* Remove horizontal padding */
+            padding: 10px 0;
             transition: all 0.3s ease;
             cursor: pointer;
-            background-color: transparent; /* Remove background */
-        }
-
-        .project:hover {
-            transform: none; /* Remove lift effect */
-            box-shadow: none; /* Remove shadow */
-            background-color: transparent; /* Remove hover background */
         }
 
         .project h2 {
             font-size: 2rem;
             margin-bottom: 15px;
             font-weight: 600;
-            color: white;
+            color: #00ff99;
             transition: all 0.3s ease;
             display: inline-block;
             position: relative;
@@ -192,9 +192,6 @@
             main {
                 padding: 30px 20px;
             }
-            .project h2 {
-                font-size: 1.6rem;
-            }
         }
 
         @media (max-width: 480px) {
@@ -202,11 +199,11 @@
                 flex-direction: column;
                 gap: 20px;
             }
-            .hero-banner img {
-                max-height: 180px;
+            .hero-title {
+                font-size: 2rem;
             }
             footer {
-                padding: 20px;
+                text-align: center;
             }
         }
     </style>
@@ -226,8 +223,10 @@
         </nav>
     </header>
 
-    <div class="hero-banner">
-        <img src="assets/images/snail-portfolio-banner.png" alt="Cartoon snail holding a Portfolio sign">
+    <!-- New hero section replacing the image -->
+    <div class="hero-section">
+        <div class="hero-subtitle">Software Engineer</div>
+        <h1 class="hero-title">Creating Digital Experiences</h1>
     </div>
 
     <main>

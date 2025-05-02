@@ -1,69 +1,45 @@
 // Simple Page Transitions with Fade Effect
-document.addEventListener('DOMContentLoaded', function() {
-  // Create a simple overlay for transitions
-  const overlay = document.createElement('div');
-  overlay.className = 'page-transition-overlay';
-  document.body.appendChild(overlay);
+document.addEventListener('DOMContentLoaded', () => {
+  // We'll apply transitions to the main content
+  const main = document.querySelector('main');
   
-  // Animation for page exit
-  function animatePageExit() {
-    return new Promise((resolve) => {
-      // Prevent scrolling during transition
-      document.body.style.overflow = 'hidden';
-      
-      // Show overlay
-      overlay.classList.add('visible');
-      
-      // Wait for animation to complete
-      setTimeout(() => {
-        resolve();
-      }, 500); // Match this to your CSS transition duration
+  // Add a transition class to the main content for smooth fading
+  if (main) {
+    main.classList.add('transition-fade');
+    
+    // On page load, make sure content is visible
+    window.addEventListener('load', () => {
+      main.classList.add('visible');
     });
   }
   
-  // Animation for page entry
-  function animatePageEntry() {
-    // Hide overlay
-    overlay.classList.remove('visible');
+  // Function to handle link clicks and page transitions
+  function handleLinkClick(event) {
+    // Only handle internal links
+    const href = this.getAttribute('href');
     
-    // Re-enable scrolling
-    document.body.style.overflow = '';
+    // Skip if it's an external link, anchor link, or other special link
+    if (!href || 
+        href.indexOf('#') === 0 || 
+        href.indexOf('http') === 0 || 
+        href.indexOf('mailto:') === 0) {
+      return; // Let the browser handle these normally
+    }
+    
+    // Prevent default navigation
+    event.preventDefault();
+    
+    // Start fade out transition
+    main.classList.remove('visible');
+    
+    // After the transition completes, navigate to the new page
+    setTimeout(() => {
+      window.location.href = href;
+    }, 300); // Match this timing to your CSS transition duration
   }
   
-  // Apply entry animation when page loads
-  window.addEventListener('load', function() {
-    // Add initial animation class
-    document.body.classList.add('content-visible');
-    
-    // Animate page entry
-    animatePageEntry();
-  });
-  
-  // Intercept all navigation links
-  document.addEventListener('click', function(e) {
-    // Check if clicked element is an internal link
-    let target = e.target;
-    
-    // If the clicked element is not an anchor, check if it's inside an anchor
-    while (target && target !== document && target.tagName !== 'A') {
-      target = target.parentNode;
-    }
-    
-    // If we found an anchor and it's an internal link
-    if (target && target.tagName === 'A') {
-      const href = target.getAttribute('href');
-      
-      // Make sure it's an internal link and not an anchor link
-      if (href && href.indexOf('#') !== 0 && href.indexOf('http') !== 0 && href.indexOf('mailto:') !== 0) {
-        // Prevent default navigation
-        e.preventDefault();
-        
-        // Animate page exit
-        animatePageExit().then(() => {
-          // Navigate to the new page
-          window.location.href = href;
-        });
-      }
-    }
+  // Add click event listeners to all internal links
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', handleLinkClick);
   });
 });

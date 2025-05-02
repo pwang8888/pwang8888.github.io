@@ -37,7 +37,7 @@
             font-size: 2.5rem;
             margin-bottom: 1.5rem;
             font-weight: 600;
-            color: #1db954; /* Spotify green for accent */
+            color: #00ff99; /* Same green as index page */
             position: relative;
             display: inline-block;
         }
@@ -49,7 +49,7 @@
             left: 0;
             width: 60px;
             height: 4px;
-            background-color: #1db954;
+            background-color: #00ff99;
             border-radius: 2px;
         }
         
@@ -65,7 +65,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 40px;
             margin-bottom: 3rem;
-            align-items: center;
+            align-items: flex-start;
         }
         
         .about-text {
@@ -89,19 +89,6 @@
             border-radius: 12px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
             position: relative;
-            z-index: 1;
-        }
-        
-        .about-image::before {
-            content: '';
-            position: absolute;
-            width: 90%;
-            height: 90%;
-            border: 2px solid #1db954;
-            border-radius: 12px;
-            top: 20px;
-            right: -15px;
-            z-index: 0;
         }
         
         .interests {
@@ -109,13 +96,12 @@
             padding: 2rem;
             background-color: rgba(255, 255, 255, 0.03);
             border-radius: 16px;
-            border-left: 4px solid #1db954;
         }
         
         .interests h2 {
             font-size: 1.8rem;
             margin-bottom: 1rem;
-            color: #1db954;
+            color: #00ff99;
             display: flex;
             align-items: center;
             gap: 12px;
@@ -173,23 +159,25 @@
     <main>
         <h1>About Me</h1>
         
-        <div class="about-intro">
-            Hi. I'm Penny.
-        </div>
-        
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    I'm a creative technologist and web developer with a passion for building intuitive digital experiences. With a background in design and technology, I blend aesthetic sensitivity with technical expertise to create websites and applications that are both beautiful and functional.
-                </p>
+        <div style="display: flex; gap: 40px; margin-bottom: 3rem;">
+            <div style="flex: 1;">
+                <div class="about-intro" style="margin-bottom: 2rem;">
+                    Hi. I'm Penny.
+                </div>
                 
-                <p>
-                    My journey in tech began with curiosity about how things work. That same curiosity continues to drive me to explore new technologies and approaches to solving problems creatively. I believe in writing clean, maintainable code that makes life better for users and developers alike.
-                </p>
+                <div class="about-text">
+                    <p>
+                        I'm a creative technologist and web developer with a passion for building intuitive digital experiences. With a background in design and technology, I blend aesthetic sensitivity with technical expertise to create websites and applications that are both beautiful and functional.
+                    </p>
+                    
+                    <p>
+                        My journey in tech began with curiosity about how things work. That same curiosity continues to drive me to explore new technologies and approaches to solving problems creatively. I believe in writing clean, maintainable code that makes life better for users and developers alike.
+                    </p>
+                </div>
             </div>
             
-            <div class="about-image">
-                <img src="assets/images/penny-seaside.jpg" alt="Penny Wang at the seaside" title="That's me!">
+            <div class="about-image" style="flex: 1; position: relative;">
+                <img src="assets/images/penny-seaside.jpg" alt="Penny Wang at the seaside" title="That's me!" style="height: 100%; object-fit: cover;">
             </div>
         </div>
         

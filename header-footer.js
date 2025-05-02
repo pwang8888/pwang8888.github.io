@@ -1,0 +1,43 @@
+// Function to create and insert the header
+function createHeader() {
+  const header = document.createElement('header');
+  
+  header.innerHTML = `
+    <div class="header-container">
+      <div class="logo">
+        Penny<span class="accent-dot">.</span>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  `;
+  
+  // Insert the header at the beginning of the body
+  document.body.insertBefore(header, document.body.firstChild);
+}
+
+// Function to create and insert the footer
+function createFooter() {
+  const footer = document.createElement('footer');
+  
+  footer.innerHTML = `
+    <div class="copyright">
+      © Penny Wang. Coded with 💚 in 2025.
+    </div>
+  `;
+  
+  // Append the footer to the body
+  document.body.appendChild(footer);
+}
+
+// Initialize header and footer when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  createHeader();
+  createFooter();
+});

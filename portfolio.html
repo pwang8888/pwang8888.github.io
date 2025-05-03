@@ -1,207 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Penny Wang</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Shared header and footer styles -->
-    <link rel="stylesheet" href="shared-styles.css">
-    <style>
-        /* Portfolio page specific styles */
-        .intro {
-            margin-bottom: 40px;
-            line-height: 1.6;
-            font-weight: 300;
-            font-size: 1.1rem;
-        }
-        
-        .intro p {
-            margin-bottom: 20px;
-        }
-        
-        /* Project List */
-        .project-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-        
-        .project {
-            margin-bottom: 8px;
-            padding: 10px 0;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .project h2 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-            color: white;
-            transition: all 0.3s ease;
-            display: inline-block;
-            position: relative;
-        }
-        
-        .project h2::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: #00ff99;
-            transition: width 0.3s ease;
-        }
-        
-        .project:hover h2 {
-            color: #00ff99;
-        }
-        
-        .project:hover h2::after {
-            width: 100%;
-        }
-        
-        .project p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-            font-weight: 300;
-        }
-        
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .project h2 {
-                font-size: 1.8rem;
-            }
-        }
-        
-        @media (max-width: 480px) {   
-            .project-list {
-                gap: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- Header will be inserted by JavaScript -->
-    
-    <main>
-        <section class="intro">
-            <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
-            
-            <p>I combine technical expertise with creative vision to design applications that deliver results for both users and organizations. Explore my work to see how I transform ideas into elegant solutions that solve real-world problems.</p>
-            
-            <p>More samples available upon request.</p>
-        </section>
-        
-        <div class="separator"></div>
-        
-        
-<style>
-    .intro {
-        margin-bottom: 40px;
-        line-height: 1.6;
-        font-weight: 300;
-        font-size: 1.1rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Penny Wang</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ffffff;
+      margin-bottom: 2rem;
     }
 
     .intro p {
-        margin-bottom: 20px;
-    }
-
-    .project-list {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
     }
 
     .project {
-        padding-bottom: 10px;
+      margin: 60px 0;
     }
 
     .project h2 {
-        font-size: 2rem;
-        margin-bottom: 15px;
-        font-weight: 600;
-        color: white;
-        transition: all 0.3s ease;
-        display: inline-block;
-        position: relative;
-    }
-
-    .project h2:hover {
-        color: #00ff99;
-    }
-
-    .separator {
-        width: 40px;
-        height: 2px;
-        background-color: rgba(255, 255, 255, 0.1);
-        margin: 5px 0 15px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
     }
 
     .project p {
-        margin-bottom: 15px;
-        line-height: 1.6;
-        font-weight: 300;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 60px 0 30px;
+      width: 100px;
     }
 
     @media (max-width: 768px) {
-        .project h2 {
-            font-size: 1.8rem;
-        }
-    }
+      main {
+        padding: 40px 20px;
+      }
 
-    @media (max-width: 480px) {
-        .project-list {
-            gap: 30px;
-        }
-    }
-</style>
+      h1 {
+        font-size: 2rem;
+      }
 
-<section class="project-list">
-            <div class="project">
-                <h2>Financial Dashboard</h2>
-                <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
-            </div>
-            
-            <div class="separator"></div>
-            
-            <div class="project">
-                <h2>Fitness Tracker Mobile App</h2>
-                <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
-            </div>
-            
-            <div class="separator"></div>
-            
-            <div class="project">
-                <h2>E-commerce Platform</h2>
-                <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
-            </div>
-            
-            <div class="separator"></div>
-            
-            <div class="project">
-                <h2>Weather Dashboard</h2>
-                <p>A simple weather application that provides current conditions and forecasts based on user location or search queries. Built with JavaScript, HTML/CSS, and the OpenWeather API, featuring a clean interface and responsive design that works across all devices.</p>
-            </div>
-            
-            <div class="separator"></div>
-            
-            <div class="project">
-                <h2>Task Management System</h2>
-                <p>A collaborative task management system designed for remote teams. Features include task assignment, progress tracking, deadline management, and team communication tools. Developed with Vue.js, Express, MongoDB, and Socket.IO for real-time updates and notifications.</p>
-            </div>
-        </section>
-    </main>
-    
-    <!-- Footer will be inserted by JavaScript -->
-    
-    <!-- Include the header and footer script -->
-    <script src="header-footer.js"></script>
-    <!-- Include page transitions -->
-    <script src="page-transitions.js"></script>
+      .project h2 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header will be inserted via JS -->
+  <main>
+    <h1>Portfolio</h1>
+
+    <div class="intro">
+      <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
+      <p>I combine technical expertise with creative vision to design applications that deliver results for both users and organizations. Explore my work to see how I transform ideas into elegant solutions that solve real-world problems.</p>
+      <p>More samples available upon request.</p>
+    </div>
+
+    <hr />
+
+    <div class="project">
+      <h2>Financial Dashboard</h2>
+      <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
+    </div>
+
+    <hr />
+
+    <div class="project">
+      <h2>Fitness Tracker Mobile App</h2>
+      <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
+    </div>
+
+    <hr />
+
+    <div class="project">
+      <h2>E-commerce Platform</h2>
+      <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
+    </div>
+  </main>
+
+  <!-- Footer loaded via JS -->
+  <script src="header-footer.js"></script>
+  <script src="page-transitions.js"></script>
 </body>
 </html>

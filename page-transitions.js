@@ -1,52 +1,100 @@
-// Simple Page Transitions with Fade Effect
-document.addEventListener('DOMContentLoaded', () => {
-  // We'll apply transitions to the main content
-  const main = document.querySelector('main');
+// Page Transition Module
+// Creates smooth transitions between pages
 
-  // Make the body visible (fixes black screen issue)
-  window.addEventListener('load', () => {
-    document.body.classList.add('content-visible');
-  });
-
-  // Add a transition class to the main content for smooth fading
-  if (main) {
-    main.classList.add('transition-fade');
-
-    // On page load, make sure content is visible
-    window.addEventListener('load', () => {
-      main.classList.add('visible');
-    });
-  }
-
-  // Function to handle link clicks and page transitions
-  function handleLinkClick(event) {
-    // Only handle internal links
-    const href = this.getAttribute('href');
-
-    // Skip if it's an external link, anchor link, or other special link
-    if (!href ||
-        href.indexOf('#') === 0 ||
-        href.indexOf('http') === 0 ||
-        href.indexOf('mailto:') === 0) {
-      return; // Let the browser handle these normally
+const PageTransition = (() => {
+  // Settings and variables
+  let settings;
+  const noTransitionClass = 'no-transition';
+  
+  return {
+    // Initialize settings
+    settings() {
+      return {
+        // Select all internal links except those with no-transition class
+        transitionLinks: document.querySelectorAll(`a[href^="/"]:not(.${noTransitionClass}), 
+                                                    a[href^="./"]:not(.${noTransitionClass}), 
+                                                    a[href^="../"]:not(.${noTransitionClass})`),
+        body: document.body,
+        window: window,
+        exitDuration: 600, // Duration of exit animation in ms
+        entranceDuration: 400 // Duration of entrance animation in ms
+      };
+    },
+    
+    // Initialize the page transition
+    init() {
+      // Only apply transitions in main window (not iframes)
+      if (window === window.top) {
+        settings = this.settings();
+        this.bindEvents();
+      } else {
+        // If in iframe, just add loaded class after a delay
+        setTimeout(() => {
+          document.body.classList.add('js-page-loaded');
+        }, 800);
+      }
+    },
+    
+    // Set up all event listeners
+    bindEvents() {
+      this.loadingClasses();
+      this.transitionPage();
+      this.handleBrowserSpecifics();
+    },
+    
+    // Add classes for page load animation
+    loadingClasses() {
+      setTimeout(() => {
+        settings.body.classList.add('js-page-loaded');
+      }, settings.entranceDuration);
+    },
+    
+    // Handle link clicks and transitions
+    transitionPage() {
+      // Loop through all transition links
+      settings.transitionLinks.forEach(link => {
+        link.addEventListener('click', event => {
+          // Skip transition if special keys are pressed or body has no-transition class
+          if (settings.body.classList.contains(noTransitionClass) || 
+              event.metaKey || event.ctrlKey || event.shiftKey) {
+            return;
+          }
+          
+          // Prevent default navigation
+          event.preventDefault();
+          
+          // Store the target URL
+          const targetUrl = link.href;
+          
+          // Add exiting class to body for CSS animation
+          settings.body.classList.add('js-page-exiting');
+          
+          // Navigate to the target URL after exit animation completes
+          setTimeout(() => {
+            window.location = targetUrl;
+          }, settings.exitDuration);
+        });
+      });
+    },
+    
+    // Handle browser-specific behaviors
+    handleBrowserSpecifics() {
+      // Firefox fix for back button
+      settings.window.addEventListener('unload', function unload() {
+        settings.window.removeEventListener('unload', unload);
+      });
+      
+      // Safari fix for back button
+      settings.window.addEventListener('pageshow', event => {
+        if (event.persisted) {
+          window.location.reload();
+        }
+      });
     }
+  };
+})();
 
-    // Prevent default navigation
-    event.preventDefault();
-
-    // Start fade out transition
-    if (main) {
-      main.classList.remove('visible');
-    }
-
-    // After the transition completes, navigate to the new page
-    setTimeout(() => {
-      window.location.href = href;
-    }, 300); // Match this timing to your CSS transition duration
-  }
-
-  // Add click event listeners to all internal links
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', handleLinkClick);
-  });
+// Initialize the page transition
+document.addEventListener('DOMContentLoaded', function() {
+  PageTransition.init();
 });

@@ -16,75 +16,63 @@ const PageTransition = (() => {
                                                     a[href^="../"]:not(.${noTransitionClass})`),
         body: document.body,
         window: window,
-        exitDuration: 600, // Duration of exit animation in ms
-        entranceDuration: 400 // Duration of entrance animation in ms
+        exitDuration: 600,
+        entranceDuration: 400
       };
     },
-    
+
     // Initialize the page transition
     init() {
-      // Only apply transitions in main window (not iframes)
       if (window === window.top) {
         settings = this.settings();
         this.bindEvents();
       } else {
-        // If in iframe, just add loaded class after a delay
         setTimeout(() => {
           document.body.classList.add('js-page-loaded');
         }, 800);
       }
     },
-    
+
     // Set up all event listeners
     bindEvents() {
       this.loadingClasses();
       this.transitionPage();
       this.handleBrowserSpecifics();
     },
-    
+
     // Add classes for page load animation
     loadingClasses() {
       setTimeout(() => {
         settings.body.classList.add('js-page-loaded');
+        settings.body.classList.add('content-visible'); // <- Add this line to fix black screen
       }, settings.entranceDuration);
     },
-    
+
     // Handle link clicks and transitions
     transitionPage() {
-      // Loop through all transition links
       settings.transitionLinks.forEach(link => {
         link.addEventListener('click', event => {
-          // Skip transition if special keys are pressed or body has no-transition class
           if (settings.body.classList.contains(noTransitionClass) || 
               event.metaKey || event.ctrlKey || event.shiftKey) {
             return;
           }
-          
-          // Prevent default navigation
+
           event.preventDefault();
-          
-          // Store the target URL
           const targetUrl = link.href;
-          
-          // Add exiting class to body for CSS animation
           settings.body.classList.add('js-page-exiting');
-          
-          // Navigate to the target URL after exit animation completes
           setTimeout(() => {
             window.location = targetUrl;
           }, settings.exitDuration);
         });
       });
     },
-    
+
     // Handle browser-specific behaviors
     handleBrowserSpecifics() {
-      // Firefox fix for back button
       settings.window.addEventListener('unload', function unload() {
         settings.window.removeEventListener('unload', unload);
       });
-      
-      // Safari fix for back button
+
       settings.window.addEventListener('pageshow', event => {
         if (event.persisted) {
           window.location.reload();
@@ -94,7 +82,8 @@ const PageTransition = (() => {
   };
 })();
 
-// Initialize the page transition
+// Initialize page transition and fix black screen
 document.addEventListener('DOMContentLoaded', function() {
   PageTransition.init();
+  document.body.classList.add('content-visible'); // <- Add this in case setTimeout fails
 });

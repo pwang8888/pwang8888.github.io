@@ -34,6 +34,29 @@
       font-size: 1.5rem;
       font-weight: 600;
       margin-bottom: 10px;
+      color: #ffffff;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .project h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #00ff99;
+      transition: width 0.3s ease;
+    }
+
+    .project:hover h2 {
+      color: #00ff99;
+    }
+
+    .project:hover h2::after {
+      width: 100%;
     }
 
     .project p {
@@ -65,7 +88,7 @@
   </style>
 </head>
 <body>
-  <!-- Header will be inserted via JS -->
+  <!-- Header loaded via JS -->
   <main>
     <h1>Portfolio</h1>
 

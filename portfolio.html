@@ -20,14 +20,22 @@
       margin-bottom: 2rem;
     }
 
+    .intro {
+      max-width: 700px;
+    }
+
     .intro p {
       font-size: 1.1rem;
       line-height: 1.8;
       margin-bottom: 1rem;
     }
 
+    .projects {
+      max-width: 800px;
+    }
+
     .project {
-      margin: 60px 0;
+      margin: 40px 0 30px;
     }
 
     .project h2 {
@@ -84,13 +92,18 @@
       .project h2 {
         font-size: 1.3rem;
       }
+
+      .intro,
+      .projects {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
   <!-- Header loaded via JS -->
   <main>
-
+    <h1>Portfolio</h1>
 
     <div class="intro">
       <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
@@ -100,23 +113,25 @@
 
     <hr />
 
-    <div class="project">
-      <h2>Financial Dashboard</h2>
-      <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
-    </div>
+    <div class="projects">
+      <div class="project">
+        <h2>Financial Dashboard</h2>
+        <p>A comprehensive financial analytics dashboard designed for financial advisors. This web app allows users to track investments, analyze market trends, and generate detailed reports. Built with React, D3.js, Node.js, and MongoDB, it features real-time data tracking and customizable widgets.</p>
+      </div>
 
-    <hr />
+      <hr />
 
-    <div class="project">
-      <h2>Fitness Tracker Mobile App</h2>
-      <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
-    </div>
+      <div class="project">
+        <h2>Fitness Tracker Mobile App</h2>
+        <p>A mobile fitness application that helps users track workouts, set goals, and monitor progress. Features include personalized workout plans, progress visualization, and social sharing capabilities. Developed with React Native, Firebase, Redux, and GraphQL, providing a seamless experience across iOS and Android platforms.</p>
+      </div>
 
-    <hr />
+      <hr />
 
-    <div class="project">
-      <h2>E-commerce Platform</h2>
-      <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
+      <div class="project">
+        <h2>E-commerce Platform</h2>
+        <p>A scalable e-commerce platform built for small to medium businesses. The application includes product management, automated inventory tracking, secure checkout, and an analytics dashboard. Created with Next.js, Stripe API, PostgreSQL, and Tailwind CSS, offering a responsive design and optimized performance.</p>
+      </div>
     </div>
   </main>
 

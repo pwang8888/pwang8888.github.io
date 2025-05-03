@@ -245,3 +245,12 @@ body.content-visible {
         gap: 15px;
     }
 }
+/* Fade-out transition for page navigation */
+body {
+  transition: opacity 0.3s ease;
+}
+
+body.fade-out {
+  opacity: 0;
+}
+

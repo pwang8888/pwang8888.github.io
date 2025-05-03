@@ -1,143 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About | Penny Wang</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Shared header and footer styles -->
-    <link rel="stylesheet" href="shared-styles.css">
-    <style>
-        /* About page specific styles */
-        h1 {
-            color: #00ff99; /* Green from index page */
-            position: relative;
-            display: inline-block;
-        }
-        
-        h1::after {
-            content: '';
-            position: absolute;
-            bottom: 10px;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background-color: #00ff99;
-            border-radius: 2px;
-        }
-        
-        .about-intro {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 0rem;
-            line-height: 1.4;
-        }
-        
-        .about-content {
-            display: flex;
-            gap: 40px;
-            margin-bottom: 0rem;
-        }
-        
-        .about-text-container {
-            flex: 1;
-        }
-        
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-        
-        .about-image {
-            flex: 1;
-        }
-        
-        .about-image img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
-        }
-        
-        .interests {
-            margin-top: 4rem;
-        }
-        
-        .interests h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            color: #00ff99;
-        }
-        
-        .emoji {
-            font-size: 1.2rem;
-            margin-right: 5px;
-            vertical-align: middle;
-        }
-        
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .about-content {
-                flex-direction: column;
-            }
-            
-            .about-image {
-                order: -1;
-                margin-bottom: 2rem;
-            }
-            
-            .about-intro {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Penny Wang</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    h1 {
+      color: #00ff99;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #00ff99;
+      border-radius: 2px;
+    }
+
+    .about-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+      margin-bottom: 3rem;
+    }
+
+    .about-text-container {
+      flex: 1 1 500px;
+    }
+
+    .about-intro {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1.2rem;
+      line-height: 1.5;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    .about-text p {
+      margin-bottom: 1.5rem;
+    }
+
+    .about-image {
+      flex: 1 1 300px;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+      max-width: 350px;
+    }
+
+    .interests {
+      margin-top: 4rem;
+    }
+
+    .interests h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: #00ff99;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      margin-left: 5px;
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .about-image img {
+        max-width: 100%;
+      }
+
+      .about-intro {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header will be inserted by JavaScript -->
-    
-    <main>
-        <h1>About Me</h1>
-        
-        <div class="about-content">
-            <div class="about-text-container">
-                <div class="about-intro">
-                    Hi. I'm Penny.
-                </div>
-                
-                <div class="about-text">
-                    <p>
-                    I'm a software engineer with a designer's eye, crafting digital experiences where code meets creativity. I thrive at the intersection of technical precision and visual elegance, building solutions that feel intuitive and look effortless.
-                    </p>
-                    <p>
-                        My journey in tech began with curiosity about how things work. That same curiosity continues to drive me to explore new technologies and approaches to solving problems creatively. I believe in writing clean, maintainable code that makes life better for users and developers alike.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="about-image">
-                <img src="assets/images/penny-seaside.jpg" alt="Penny Wang at the seaside" title="That's me!">
-            </div>
+  <!-- Header loaded via JS -->
+  <main>
+    <h1>About Me</h1>
+    <div class="about-content">
+      <div class="about-text-container">
+        <div class="about-intro">Hi. I'm Penny.</div>
+        <div class="about-text">
+          <p>
+            I'm a software engineer with a designer's eye, crafting digital experiences where code meets creativity.
+            I thrive at the intersection of technical precision and visual elegance, building solutions that feel
+            intuitive and look effortless.
+          </p>
+          <p>
+            My journey in tech began with curiosity about how things work. That same curiosity continues to drive me
+            to explore new technologies and approaches to solving problems creatively. I believe in writing clean,
+            maintainable code that makes life better for users and developers alike.
+          </p>
         </div>
-        
-        <div class="interests">
-            <h2>What I'm Into <span class="emoji">💚</span></h2>
-            <div class="about-text">
-                <p>
-                   When I'm not coding, you can find me exploring hiking trails, experimenting in the kitchen with new recipes, or diving into a good book. I'm particularly interested in how technology can be used to create more sustainable and equitable futures.
-                </p>
-            </div>
-        </div>
-    </main>
-    
-    <!-- Footer will be inserted by JavaScript -->
-    
-    <!-- Include the header and footer script -->
-    <script src="header-footer.js"></script>
-    <!-- Include page transitions -->
-    <script src="page-transitions.js"></script>
+      </div>
+      <div class="about-image">
+        <img src="assets/images/penny-seaside.jpg" alt="Penny Wang at the seaside" />
+      </div>
+    </div>
+
+    <div class="interests">
+      <h2>What I'm Into <span class="emoji">💚</span></h2>
+      <div class="about-text">
+        <p>
+          When I'm not coding, you can find me exploring hiking trails, experimenting in the kitchen with new recipes,
+          or diving into a good book. I'm particularly interested in how technology can be used to create more
+          sustainable and equitable futures.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer loaded via JS -->
+  <script src="header-footer.js"></script>
+  <script src="page-transitions.js"></script>
 </body>
 </html>

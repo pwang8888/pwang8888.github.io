@@ -1,55 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Penny Wang</title>
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <!-- Shared header and footer styles -->
-    <link rel="stylesheet" href="shared-styles.css">
-    <!-- Contact form specific styles -->
-    <link rel="stylesheet" href="contact-styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Penny Wang</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared-styles.css" />
+  <style>
+    main {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h1::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color: #00ff99;
+      border-radius: 2px;
+      margin-top: 0.5rem;
+    }
+
+    p.description {
+      font-size: 1.1rem;
+      margin-bottom: 2.5rem;
+      color: #ccc;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    label {
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    input,
+    textarea {
+      padding: 12px;
+      font-size: 1rem;
+      background-color: #111;
+      border: 1px solid #333;
+      color: #fff;
+      border-radius: 6px;
+      width: 100%;
+    }
+
+    textarea {
+      height: 150px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #00ff99;
+      color: black;
+      padding: 12px 20px;
+      font-size: 1rem;
+      font-weight: 500;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: fit-content;
+    }
+
+    button:hover {
+      background-color: #00e68a;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 40px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Header will be inserted by JavaScript -->
+  <!-- Header via JavaScript -->
+  <main>
+    <h1>Get in Touch<span style="color:#00ff99;">.</span></h1>
+    <p class="description">
+      Feel free to reach out for collaborations, job opportunities, or just to say hello. I'll get back to you as soon as possible.
+    </p>
 
-    <main>
-        <h2 class="contact-title">Get in Touch</h2>
-        <p class="contact-subtitle">Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!</p>
-        
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject">
-            </div>
-            
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" required></textarea>
-            </div>
-            
-            <div class="form-group">
-                <button type="submit" class="submit-btn">Send Message</button>
-            </div>
-        </form>
-    </main>
-    
-    <!-- Footer will be inserted by JavaScript -->
-    
-    <!-- Include the header and footer script -->
-    <script src="header-footer.js"></script>
-    <!-- Include page transitions -->
-    <script src="page-transitions.js"></script>
+    <form>
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div>
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" />
+      </div>
+
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </main>
+
+  <!-- Footer via JavaScript -->
+  <script src="header-footer.js"></script>
+  <script src="page-transitions.js"></script>
 </body>
 </html>

@@ -1,5 +1,33 @@
 /* Universal Header and Footer Styles */
 
+/* Base styles for all pages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #121212; /* Dark background */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    /* Page transition */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+body.content-visible {
+    opacity: 1;
+}
+
+body.js-page-exiting {
+    opacity: 0;
+}
+
 /* Header/Navigation */
 header {
     padding: 30px 20px;
@@ -29,7 +57,6 @@ header {
     display: inline-block;
 }
 
-/* Ensure all link states maintain proper colors */
 .logo-link:link, 
 .logo-link:visited, 
 .logo-link:hover, 
@@ -42,19 +69,17 @@ header {
     display: inline-block;
     font-size: 1.8rem;
     font-weight: 500;
-    color: white; /* Explicitly set color */
+    color: white;
 }
 
 .accent-dot {
-    color: #00ff99 !important; /* Force the green color with !important */
+    color: #00ff99 !important;
 }
 
-/* Ensure the dot is green in all link states */
 .logo-link:link .accent-dot,
 .logo-link:visited .accent-dot,
 .logo-link:hover .accent-dot,
-.logo-link:active .accent-dot,
-.transition-logo .accent-dot {
+.logo-link:active .accent-dot {
     color: #00ff99 !important;
 }
 
@@ -99,7 +124,6 @@ nav a:hover::after {
     width: 100%;
 }
 
-/* Active navigation link */
 nav a.active {
     color: #00ff99;
 }
@@ -127,28 +151,7 @@ main {
     margin-top: 20px;
 }
 
-/* Base styles for all pages */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #121212; /* Dark background */
-    color: white;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* Common headings and text styles */
-h1 {
-    font-weight: 500;
-}
-
-/* Accent colors and common elements */
+/* Accent element */
 .separator {
     width: 40px;
     height: 2px;
@@ -163,77 +166,12 @@ header.header-scrolled {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* Page transitions */
-.page-transition-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #121212;
-    z-index: 9999;
-    transform: translateX(100%);
-    transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1);
-    pointer-events: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.page-transition-overlay.from-left {
-    transform: translateX(-100%);
-}
-
-.page-transition-overlay.from-right {
-    transform: translateX(100%);
-}
-
-.page-transition-overlay.active {
-    transform: translateX(0);
-}
-
-.transition-logo {
-    font-size: 3rem;
-    font-weight: 500;
-    color: white;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.4s ease, transform 0.4s ease;
-}
-
-.page-transition-overlay.active .transition-logo {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: 0.2s;
-}
-
-.transition-logo .accent-dot {
-    color: #00ff99;
-}
-
-.transition-logo .accent-dot {
-    color: #00ff99;
-}
-
-body {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-body.content-visible {
-    opacity: 1;
-}
-
-body.js-page-exiting {
-  opacity: 0;
-}
-
-/* Media Queries for Header and Footer */
+/* Responsive Styles */
 @media (max-width: 768px) {
     header {
         padding: 20px 15px;
     }
-    
+
     nav ul {
         gap: 20px;
     }
@@ -244,17 +182,8 @@ body.js-page-exiting {
         flex-direction: column;
         gap: 15px;
     }
-    
+
     nav ul {
         gap: 15px;
     }
 }
-/* Fade-out transition for page navigation */
-body {
-  transition: opacity 0.3s ease;
-}
-
-body.fade-out {
-  opacity: 0;
-}
-

@@ -25,7 +25,8 @@
 }
 
 .contact-form label {
-    margin-bottom: 16px;
+    display: block
+    margin-bottom: 6px;
     font-weight: 500;
     color: #ccc;
 }

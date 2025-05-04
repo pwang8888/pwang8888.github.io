@@ -1,5 +1,6 @@
 // Page Transition Module
 // Creates smooth transitions between pages
+console.log("PageTransition JS loaded");
 
 const PageTransition = (() => {
   // Settings and variables

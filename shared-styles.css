@@ -224,6 +224,10 @@ body.content-visible {
     opacity: 1;
 }
 
+body.js-page-exiting {
+  opacity: 0;
+}
+
 /* Media Queries for Header and Footer */
 @media (max-width: 768px) {
     header {

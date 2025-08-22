@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Penny Wang</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='28' font-size='28'%3E💚%3C/text%3E%3C/svg%3E" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/shared-styles.css" />
+  <style>
+    main {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 30px;
+    }
+
+    h1 {
+      color: #00ff99;
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background-color: #00ff99;
+      border-radius: 2px;
+    }
+
+    .intro {
+      max-width: 850px;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+
+    .projects {
+      max-width: 900px;
+    }
+
+    .project {
+      margin: 35px 0 35px;
+    }
+
+    .project h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #ffffff;
+      position: relative;
+      display: inline-block;
+      transition: color 0.3s ease;
+    }
+
+    .project h2::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background-color: #00ff99;
+      transition: width 0.3s ease;
+    }
+
+    .project:hover h2 {
+      color: #00ff99;
+    }
+
+    .project:hover h2::after {
+      width: 100%;
+    }
+
+    .project p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #ccc;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 15px 0 15px;
+      width: 100px;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .project h2 {
+        font-size: 1.3rem;
+      }
+
+      .intro,
+      .projects {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header loaded via JS -->
+  <main>
+    <h1>Portfolio</h1>
+
+    <div class="intro">
+      <p>Welcome to my portfolio! I'm a Software Engineer with a passion for creating impactful, engaging digital experiences. Skilled in a wide range of technologies, including React, Node.js, Python, and various frontend and backend frameworks.</p>
+      <p>I combine technical expertise with creative vision to design applications that deliver results for both users and organizations. Explore my work to see how I transform ideas into elegant solutions that solve real-world problems.</p>
+      <p>More samples available upon request.</p>
+    </div>
+
+    <hr />
+
+    <div class="projects">
+      <div class="project">       
+        <h2>
+            <a href="https://github.com/pwang8888/langchain-rag" target="_blank">
+                LangChain RAG Document QA System
+            </a>
+        </h2>
+        <p>Built a Retrieval-Augmented Generation pipeline using LangChain, ChromaDB, and OpenAI models to enable natural language querying of custom documents (e.g., employee handbooks, PDFs, and markdown files). Implemented document embedding, vector search, and answer generation with cited sources. Automated database creation and query handling through Python scripts, with clean, source-backed answers.</p>
+      </div>
+
+      <hr />
+
+      <div class="project">
+        <h2>
+            <a href="https://github.com/pwang8888/bridge-project" target="_blank">
+                Bridge Project
+            </a> 
+        </h2>
+        <p>This project implements a cross-chain bridge between the Avalanche Fuji testnet and the Binance Smart Chain (BSC) testnet. The bridge facilitates the seamless transfer of ERC-20 tokens between these two chains using smart contracts and an off-chain Python relayer.</p>
+      </div>
+
+      <hr />
+
+      <div class="project">
+        <h2>
+            <a href="https://github.com/pwang8888/Spotify" target="_blank">
+                Interactive Spotify-Themed Web App
+            </a> 
+        </h2>
+        <p>Built a full stack music-themed web app using Node.js, MySQL, and React. Developed custom API endpoints and designed a multi-page Material UI frontend with embedded visualizations. Tools: Node.js, Express, MySQL, React.js, Material UI, Recharts</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer loaded via JS -->
+  <script src="assets/js/header-footer.js"></script>
+  <script src="assets/js/page-transitions.js"></script>
+</body>
+</html> 

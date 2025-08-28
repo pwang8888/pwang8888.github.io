@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pokédex</title>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🔴 Pokédex ⚪</h1>
+      <p class="subtitle">Gotta catch 'em all! ⚡ The ultimate Pokemon encyclopedia</p>
+    </div>
+
+    <div class="main-content">
+      <div class="search-section">
+        <div class="input-container">
+          <input id="pokemonName" placeholder="Which Pokémon are you looking for? 🔍" autocomplete="off">
+          <div id="suggestions" class="suggestions"></div>
+        </div>
+        
+        <div class="button-group">
+          <button class="btn btn-primary" id="searchBtn">🔍 Catch Pokémon</button>
+          <button class="btn btn-secondary" id="randomBtn">🎲 Random</button>
+        </div>
+
+        <div class="pokemon-card" id="pokemonInfo">
+          <div class="welcome">
+            🎯 Choose a Pokémon to start your adventure!
+          </div>
+        </div>
+      </div>
+
+      <div class="popular-section">
+        <div class="popular-title">⭐ Popular Pokémon</div>
+        <div class="popular-grid" id="popularPokemon">
+          <div class="popular-pokemon electric-type" data-pokemon="pikachu">⚡ Pikachu</div>
+          <div class="popular-pokemon fire-type" data-pokemon="charizard">🔥 Charizard</div>
+          <div class="popular-pokemon water-type" data-pokemon="blastoise">🌊 Blastoise</div>
+          <div class="popular-pokemon grass-type" data-pokemon="venusaur">🌿 Venusaur</div>
+          <div class="popular-pokemon ghost-type" data-pokemon="gengar">👻 Gengar</div>
+          <div class="popular-pokemon dragon-type" data-pokemon="dragonite">🐉 Dragonite</div>
+          <div class="popular-pokemon psychic-type" data-pokemon="mewtwo">🧠 Mewtwo</div>
+          <div class="popular-pokemon psychic-type" data-pokemon="mew">✨ Mew</div>
+          <div class="popular-pokemon flying-type" data-pokemon="lugia">🕊️ Lugia</div>
+          <div class="popular-pokemon dragon-type" data-pokemon="rayquaza">🐲 Rayquaza</div>
+          <div class="popular-pokemon fighting-type" data-pokemon="lucario">⚔️ Lucario</div>
+          <div class="popular-pokemon ground-type" data-pokemon="garchomp">🦈 Garchomp</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/pokemon-api.js"></script>
+  <script src="js/autocomplete.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
